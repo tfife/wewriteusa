@@ -29,9 +29,9 @@
             {
                 $title = $row['doc_title'];
                 $content = $row['doc_text'];
-                $id = $row['id'];
+                $id = $row['doc_id'];
                 $user = $row['user_id'];
-                echo "<div class='card'><a href='document.php?id=$user'><p><strong>$title </strong> - $user<p></a></div>";
+                echo "<div class='card'><a href='document.php?doc=$id' style='text-decoration: none'><p><strong>$title </strong></a>-<a href='profile.php?user=$user' style='text-decoration:none'>$user</a></div>";
                 $i++;
             }
         ?>
