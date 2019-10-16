@@ -17,9 +17,7 @@
 </head>
 
 <body>
-    <header>
-        <?php include("navbar.php")?>
-    </header>
+    <?php include("navbar.php")?>
 
     <div class="sidebar">
         this is going to be a sidebar!
