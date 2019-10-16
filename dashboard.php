@@ -21,6 +21,10 @@
         <?php include("navbar.php")?>
     </header>
 
+    <div class="sidebar">
+        
+    </div>
+
 
     <footer>
         Website created by Tori Fife. 10/2019.
