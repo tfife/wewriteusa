@@ -1,8 +1,8 @@
 header {
     height: 80px;
 }
-header > img {
-    height: 70px;
+#navbar > ul > li > img {
+    height: auto;
     width: auto;
 }
 #navbar {
