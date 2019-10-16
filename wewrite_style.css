@@ -1,3 +1,6 @@
+* {
+    margin: 0;
+}
 body {
     display: grid;
     grid-template-areas:
@@ -27,7 +30,7 @@ body {
   .navbar li a:hover {
      background-color: rgb(90, 0, 50);
   }
-  .logo { grid-area: logo; }
+  .logo { grid-area: logo; width: 70px; }
   .search { grid-area: search; }
   .link1 { grid-area: link1; }
   .link2 { grid-area: link2; }
