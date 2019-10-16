@@ -21,7 +21,7 @@
         <?php include("navbar.php")?>
     </header>
 
-    <div class="row">
+    <!--<div class="row">-->
         <div class="col-md-3" style="background-color: gray; text-align: right; height:100%">
             here is my sidebar
         </div>
@@ -35,8 +35,7 @@
             here is my other sidebar
         </div>
 
-        </div>
-    </div>
+    <!--</div>-->
 
 
 </body>
