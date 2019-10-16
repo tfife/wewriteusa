@@ -2,7 +2,7 @@ header {
     height: 80px;
 }
 #navbar > ul > li > img {
-    height: auto;
+    height: 70px;
     width: auto;
 }
 #navbar {
