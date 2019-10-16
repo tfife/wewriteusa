@@ -21,9 +21,7 @@
         <?php include("navbar.php")?>
     </header>
 
-    <div class="sidebar">
-        
-    </div>
+    <div class="sidebar"></div>
 
 
     <footer>
