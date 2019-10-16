@@ -1,13 +1,21 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <a class="navbar-brand" href="#">
         <img src="images/logo.png" alt="logo" style="width: 40px;">
     </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="profile.php">Profile</a>
-        </li>
-    </ul>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="profile.php">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="dashboard.php">Dashboard</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
 
