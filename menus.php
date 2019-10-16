@@ -12,3 +12,5 @@
     <li><a href="favorites.php">Favorites</a></li>
     <li><a href="friends.php">Friends</a></li>
 </ul>
+
+<div class="sidebar2">This will be another sidebar!</div>

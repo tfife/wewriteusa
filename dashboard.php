@@ -36,13 +36,9 @@
             }
         ?>
     </div>
-    <div class="sidebar2">This will be another sidebar!</div>
     <footer>
         Website created by Tori Fife. 10/2019.
     </footer>
-
-    </div>
-
 
 </body>
 </html>
