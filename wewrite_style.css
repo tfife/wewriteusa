@@ -1,0 +1,23 @@
+body {
+    display: grid;
+    grid-template-areas:
+        'navbar navbar navbar navbar navbar'
+        'sidebar main main main sidebar2'
+        'sidebar footer footer footer sidebar2';
+}
+
+.navbar {
+    background-color: purple;
+    height: 60px;
+}
+
+.sidebar {
+    max-width: 300px;
+}
+.sidebar2 {
+    max-width: 300px;
+}
+
+@media screen and (min-width: 600px) {
+
+}

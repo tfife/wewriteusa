@@ -17,27 +17,20 @@
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-xl-12">
-            <header>
-                <?php include("navbar.php")?>
-            </header>
-        </div>
+    <div class="navbar">
+        <header>
+            <?php include("navbar.php")?>
+        </header>
     </div>
 
-    <div class="row">
-        <div class="col-md-3" style="background-color: gray; text-align: right">
-            here is my sidebar
-        </div>
-        <div class="col-md-6">
-            here is all the other content
-            <footer>
-                Website created by Tori Fife. 10/2019.
-            </footer>
-        </div>
-        <div class="col-md-3" style="background-color: gray">
-            here is my other sidebar
-        </div>
+    <div class="sidebar">
+        this is going to be a sidebar!
+    </div>
+    <div class="main_content"></div>
+    <div class="sidebar2">This will be another sidebar!</div>
+    <footer>
+        Website created by Tori Fife. 10/2019.
+    </footer>
 
     </div>
 
