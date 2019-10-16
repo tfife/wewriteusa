@@ -25,15 +25,15 @@
                 $statement = $db->prepare("SELECT doc_id, doc_title, doc_text, user_id FROM document");
                 $statement->execute();
                 // Go through each result
-                for ($i = 0; $i < 10; $i++)
+                $i = 0;
+                while (($row = $statement->fetch(PDO::FETCH_ASSOC)) && $i < 10)
                 {
-                    $row = $statement->fetch(PDO::FETCH_ASSOC);
-
 	                $title = $row['doc_title'];
 	                $content = $row['doc_text'];
 	                $id = $row['id'];
                     $user = $row['user'];
-	                echo "<p><strong>$title </strong> - $user<p>";
+                    echo "<p><strong>$title </strong> - $user<p>";
+                    $i++;
                 }
             ?>
         </div>
