@@ -17,11 +17,15 @@
 </head>
 
 <body>
-    <header>
-        <?php include("navbar.php")?>
-    </header>
+    <div class="row">
+        <div class="col-xl-12">
+            <header>
+                <?php include("navbar.php")?>
+            </header>
+        </div>
+    </div>
 
-    <div class="row" style="height: 100%">
+    <div class="row">
         <div class="col-md-3" style="background-color: gray; text-align: right">
             here is my sidebar
         </div>
