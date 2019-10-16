@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" href="#">
-        <img src="images/logo.png" alt="logo" style="width: auto;">
+        <img src="images/logo.png" alt="logo" style="width: 40px;">
     </a>
 
     <ul class="navbar-nav">
