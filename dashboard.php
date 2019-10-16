@@ -17,7 +17,12 @@
     <?php include("navbar.php")?>
 
     <div class="sidebar">
-        this is going to be a sidebar!
+        <ul>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="mydocuments.php">My Docs</a></li>
+            <li><a href="favorites.php">Favorites</a></li>
+            <li><a href="friends.php">Friends</a></li>
+        </ul>
     </div>
     <div class="main_content"></div>
     <div class="sidebar2">This will be another sidebar!</div>
