@@ -31,7 +31,7 @@
 	                $title = $row['doc_title'];
 	                $content = $row['doc_text'];
 	                $id = $row['id'];
-                    $user = $row['user'];
+                    $user = $row['user_id'];
                     echo "<p><strong>$title </strong> - $user<p>";
                     $i++;
                 }
