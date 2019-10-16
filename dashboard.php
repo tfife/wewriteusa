@@ -20,23 +20,21 @@
 
 
     <div class="main_content">
-        <div class="card">
-            <?php 
-                $statement = $db->prepare("SELECT doc_id, doc_title, doc_text, user_id FROM document");
-                $statement->execute();
-                // Go through each result
-                $i = 0;
-                while (($row = $statement->fetch(PDO::FETCH_ASSOC)) && $i < 10)
-                {
-	                $title = $row['doc_title'];
-	                $content = $row['doc_text'];
-	                $id = $row['id'];
-                    $user = $row['user_id'];
-                    echo "<p><strong>$title </strong> - $user<p>";
-                    $i++;
-                }
-            ?>
-        </div>
+        <?php 
+            $statement = $db->prepare("SELECT doc_id, doc_title, doc_text, user_id FROM document");
+            $statement->execute();
+            // Go through each result
+            $i = 0;
+            while (($row = $statement->fetch(PDO::FETCH_ASSOC)) && $i < 10)
+            {
+                $title = $row['doc_title'];
+                $content = $row['doc_text'];
+                $id = $row['id'];
+                $user = $row['user_id'];
+                echo "<div class='card'><a href='document.php?id=$user'><p><strong>$title </strong> - $user<p></a></div>";
+                $i++;
+            }
+        ?>
     </div>
     <div class="sidebar2">This will be another sidebar!</div>
     <footer>
