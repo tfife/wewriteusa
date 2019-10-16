@@ -58,7 +58,7 @@ body {
 }
 .sidebar2 {
     grid-area: sidebar2;
-    background-color: gray;
+    background-color: lightgray;
 }
 
 .main_content {
