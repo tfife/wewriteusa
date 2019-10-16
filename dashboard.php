@@ -22,7 +22,7 @@
     </header>
 
     <div class="row">
-        <div class="col-md-3" style="background-color: gray; height: 100%">
+        <div class="col-md-3" style="background-color: gray; text-align: right; max-width: 300px">
             here is my sidebar
         </div>
         <div class="col-md-9">
