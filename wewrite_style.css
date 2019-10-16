@@ -17,15 +17,12 @@ body {
     display: grid;
     grid-template-areas: 'logo search break break link1 link2 link3';
   }
-  .navbar li {
-  }
   .navbar li a {
   display: block;
   font-size: 20px;
   padding: 14px 20px;
   text-decoration: none;
   color: white;
-  border-right: 1px solid rgb(90, 0, 50);
   }
   .navbar li a:hover {
      background-color: rgb(90, 0, 50);
