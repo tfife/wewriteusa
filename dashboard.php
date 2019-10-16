@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        We Write USA is a writing platform blah blah blah
+        <?php include("navbar.php")?>
     </header>
 
 
