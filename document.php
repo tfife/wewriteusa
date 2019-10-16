@@ -3,7 +3,7 @@
     require "dbConnect.php";
     $db = get_db();
     
-    $id = $_GET['id'];
+    $id = $_GET['doc'];
 
     $statement = $db->prepare("SELECT doc_title, doc_text, user_id FROM document WHERE doc_id=$id");
     $statement->execute();
