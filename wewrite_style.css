@@ -1,9 +1,14 @@
+* {
+    margin: 0;
+}
 header {
-    height: 80px;
+    height: 60px;
 }
 #navbar {
     list-style-type: none;
     overflow: hidden;
+    background-color: rgb(100, 40, 90);
+    color: white;
 }
 #navbar li {
 float: left;
@@ -12,15 +17,13 @@ float: left;
     display: block;
     font-size: 20px;
     font-weight: bold;
-    color: indigo;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     border-right: 1px solid thistle;
 }
 #navbar li a:hover {
-    background-color: indigo;
-    color: white;
+    background-color: rgb(140, 70, 125);
     text-shadow: 0 0 3px black;
 }
 
