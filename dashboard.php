@@ -25,10 +25,10 @@
         <div class="col-md-3" style="background-color: gray; text-align: right; max-width: 300px">
             here is my sidebar
         </div>
-        <div class="col-md-6">
+        <div>
             here is all the other content
         </div>
-        <div class="col-md-3" style="background-color: gray; text-align: right; max-width: 300px">
+        <div class="col-md-3" style="float: right; background-color: gray; text-align: right; max-width: 300px">
             here is my other sidebar
         </div>
 
