@@ -4,18 +4,32 @@ body {
         'navbar navbar navbar navbar navbar'
         'sidebar main main main sidebar2'
         'sidebar footer footer footer sidebar2';
+    grid-gap: 10px;
 }
 
 .navbar {
+    grid-area: navbar;
     background-color: purple;
     height: 60px;
 }
 
 .sidebar {
+    grid-area: sidebar;
     max-width: 300px;
+    background-color: gray;
 }
 .sidebar2 {
+    grid-area: sidebar2;
     max-width: 300px;
+    background-color: gray;
+}
+
+.main_content {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
 }
 
 @media screen and (min-width: 600px) {
