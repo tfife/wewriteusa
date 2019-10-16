@@ -6,6 +6,7 @@
 <html lang="en-us">
 
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="wewrite_style.css">
     <meta charset="UTF-8">
     <title>Dashboard</title>
