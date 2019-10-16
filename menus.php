@@ -5,3 +5,10 @@
     <li class="link2"><a href="dashboard.php">Dashboard</a></li>
     <li class="link3"><a href="notifications.php">***</a></li>
 </ul>
+
+<ul class="sidebar">
+    <li><a href="profile.php">Profile</a></li>
+    <li><a href="mydocuments.php">My Docs</a></li>
+    <li><a href="favorites.php">Favorites</a></li>
+    <li><a href="friends.php">Friends</a></li>
+</ul>

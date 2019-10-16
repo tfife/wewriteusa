@@ -65,8 +65,17 @@ body {
     grid-area: main;
 }
 
-.footer {
+.card {
+    margin: 10px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+  }
+
+footer {
     grid-area: footer;
+    text-align: center;
+    font-size: small;
 }
 
 @media screen and (min-width: 600px) {
