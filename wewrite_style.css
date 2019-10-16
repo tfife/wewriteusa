@@ -9,22 +9,35 @@ body {
 
 header {
     grid-area: navbar;
-    background-color: purple;
-    height: 60px;
 }
 
-#navbar {
+.navbar {
+    background-color: rgb(120, 0, 75);
+    height: 50px;
     list-style-type: none;
     text-align: center;
-    margin: 0;
-    padding: 0;
-}
-#navbar li {
-    display: inline-block;
-    font-size: 20px;
-    padding: 20px;
-    color: white;
-}
+    align-items: center;
+    display: grid;
+    grid-template-areas: 'logo search break break link1 link2 link3';
+  }
+  .navbar li {
+  }
+  .navbar li a {
+  display: block;
+  font-size: 20px;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: white;
+  border-right: 1px solid rgb(90, 0, 50);
+  }
+  .navbar li a:hover {
+     background-color: rgb(90, 0, 50);
+  }
+  .logo { grid-area: logo; }
+  .search { grid-area: search; }
+  .link1 { grid-area: link1; }
+  .link2 { grid-area: link2; }
+  .link3 { grid-area: link3; }
 
 .sidebar {
     grid-area: sidebar;

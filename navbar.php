@@ -1,8 +1,7 @@
-<ul id="navbar">
-    <li><img src="images/logo.png" alt="logo" style="height: 70px; width: auto"></li>
-    <li><input type="text" id="searchbar"></li>
-    <li><a href="profile.php">Profile</a></li>
-    <li><a href="dashboard.php">Dashboard</a></li>
-    <li><a href="notifications.php">***</a></li>
-    <li><a href="settings.php">Settings</a></li>
+<ul class="navbar">
+    <li class="logo"><img src="images/logo.png" alt="logo" style="height: 70px; width: auto"></li>
+    <li class="search"><input type="text" id="searchbar"><button type="submit">Search</button></li>
+    <li class="link1"><a href="profile.php">Profile</a></li>
+    <li class="link2"><a href="dashboard.php">Dashboard</a></li>
+    <li class="link3"><a href="notifications.php">***</a></li>
 </ul>
