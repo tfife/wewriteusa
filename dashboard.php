@@ -21,21 +21,21 @@
         <?php include("navbar.php")?>
     </header>
 
-    <!--<div class="row">-->
-        <div class="col-md-3" style="background-color: gray; text-align: right; height:100%">
+    <div class="row" style="height: 100%">
+        <div class="col-md-3" style="background-color: gray; text-align: right">
             here is my sidebar
         </div>
-        <div class="col-md-6" style="height: 100%">
+        <div class="col-md-6">
             here is all the other content
             <footer>
                 Website created by Tori Fife. 10/2019.
             </footer>
         </div>
-        <div class="col-md-3" style="background-color: gray; height:100%">
+        <div class="col-md-3" style="background-color: gray">
             here is my other sidebar
         </div>
 
-    <!--</div>-->
+    </div>
 
 
 </body>
