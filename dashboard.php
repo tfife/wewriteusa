@@ -22,13 +22,13 @@
     </header>
 
     <div class="row">
-        <div class="col-md-3" style="background-color: gray; text-align: right; max-width: 300px">
+        <div class="col-md-3" style="background-color: gray; text-align: right">
             here is my sidebar
         </div>
-        <div>
+        <div class="col-md-6">
             here is all the other content
         </div>
-        <div class="col-md-3" style="float: right; background-color: gray; text-align: right; max-width: 300px">
+        <div class="col-md-3" style="background-color: gray">
             here is my other sidebar
         </div>
 
