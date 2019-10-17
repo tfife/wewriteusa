@@ -3,7 +3,7 @@
     require "dbConnect.php";
     $db = get_db();
     
-    $id = $_GET['user'];
+    $id = $_GET['doc'];
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
