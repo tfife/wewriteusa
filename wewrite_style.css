@@ -93,7 +93,7 @@ body {
 }
 .com_card a {
     display: block;
-    color: blue;
+    color: rgb(90, 0, 50);
     text-decoration: none;
 }
 .com_card a:hover {
