@@ -3,7 +3,7 @@
     require "dbConnect.php";
     $db = get_db();
     
-    $id = $_GET['doc'];
+    $id = $_GET['user'];
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
@@ -11,9 +11,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="wewrite_style.css">
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="View your information for wewrite account">
+    <meta name="description" content="View and Comment on a Document">
 </head>
 
 <body>
@@ -23,7 +23,8 @@
     <div class="main_content">
 
 
-<?php
+<?php 
+    
     $statement = $db->prepare("SELECT display_name, profile.user_id, doc_title, doc_text FROM profile, document WHERE doc_id=$id AND profile.user_id = document.user_id");
     $statement->execute();
 

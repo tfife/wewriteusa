@@ -61,6 +61,9 @@ body {
     background-color: lightgray;
 }
 
+h2 {
+    color: rgb(90, 0, 50);
+}
 .main_content {
     grid-area: main;
 }
@@ -83,7 +86,7 @@ body {
 
 .com_card {
     font-size: 12px;
-    margin: 0;
+    margin: 0 -15px 10px -15px;
     padding: 10px;
     border: 1px solid darkslategray;
     border-radius: 5px;
