@@ -35,6 +35,7 @@
 
     echo "<div class='card'><h2>$title</h2><a href='profile.php?user=$user' style='text-decoration: none'>$user</a><br><p>$content</p></div>";
 
+    echo"<div class='card'><h2>Comments</h2><br>";
     $statement = $db->prepare("SELECT comment_text, user_id FROM comment WHERE doc_id=$id");
     $statement->execute();
 
@@ -42,8 +43,9 @@
         {
             $comment = $row['comment_text'];
             $commenter = $row['user_id'];
-            echo "<div class='card'><a href='profile.php?user=$commenter' style='text-decoration: none'><h3>$commenter</h3></a><p>$comment</p></div>";
+            echo "<div class='com_card'><a href='profile.php?user=$commenter' style='text-decoration: none'>$commenter</a><p>$comment</p></div>";
         }
+    echo "</div>";
 
 ?>
     </div>
