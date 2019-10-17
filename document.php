@@ -34,7 +34,7 @@
     $user = $row['user_id'];
     $username = $row['display_name'];
 
-    echo "<div class='card'><div style='text-align: center'><h2 style='text-align:>$title</h2><a href='profile.php?user=$user'><br>-$username-</a></div><br><p>$content</p></div>";
+    echo "<div class='card'><div style='text-align: center'><h2>$title</h2><a href='profile.php?user=$user'><br>-$username-</a></div><br><p>$content</p></div>";
 
     echo"<div class='card'><h2>Comments</h2><br>";
     $statement = $db->prepare("SELECT display_name, comment_text, comment.user_id FROM profile, comment WHERE doc_id=$id AND comment.user_id = profile.user_id");
