@@ -67,14 +67,16 @@ body {
 
 .card {
     margin: 15px;
-    padding: 10px;
+    padding: 10px 40px 30px 40px;
     border: 1px solid black;
     border-radius: 5px;
     background-color: white;
   }
   .card a {
+      display: inline-block;
       color: blue;
       text-decoration: none;
+      display: inline;
   }
   .card a:hover {
       background-color: whitesmoke;
