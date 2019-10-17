@@ -3,7 +3,7 @@
     require "dbConnect.php";
     $db = get_db();
     
-    $id = $_GET['doc'];
+    $id = $_GET['user'];
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
@@ -11,9 +11,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="wewrite_style.css">
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="View your information for wewrite account">
+    <meta name="description" content="View and Comment on a Document">
 </head>
 
 <body>
@@ -23,7 +23,23 @@
     <div class="main_content">
 
 
-<?php
+<?php 
+    $statement = $db->prepare("SELECT display_name, document.user_id, doc_id, doc_title, doc_sum FROM profile, document WHERE profile.user_id = document.user_id; ");
+    $statement->execute();
+    // Go through each result
+    $i = 0;
+    while (($row = $statement->fetch(PDO::FETCH_ASSOC)) && $i < 10)
+    {
+        $title = $row['doc_title'];
+        $summary = $row['doc_sum'];
+        $content = $row['doc_text'];
+        $id = $row['doc_id'];
+        $user = $row['user_id'];
+        $username = $row['display_name'];
+        echo "<div class='card'><a href='document.php?doc=$id'><p><h2 style='display: inline'>$title</h2></a><a href='profile.php?user=$user' style='float: right'>-$username-</a><p>$summary</p></div>";
+        $i++;
+    }
+    ?>
     $statement = $db->prepare("SELECT display_name, profile.user_id, doc_title, doc_text FROM profile, document WHERE doc_id=$id AND profile.user_id = document.user_id");
     $statement->execute();
 

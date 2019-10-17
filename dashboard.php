@@ -33,7 +33,7 @@
                 $id = $row['doc_id'];
                 $user = $row['user_id'];
                 $username = $row['display_name'];
-                echo "<div class='card'><a href='document.php?doc=$id'><p><h2 style='display: inline'>$title</h2></a><a href='profile.php?user=$user' style='float: right'>$username</a><p>$summary</p></div>";
+                echo "<div class='card'><a href='document.php?doc=$id'><p><h2 style='display: inline'>$title</h2></a><a href='profile.php?user=$user' style='float: right'>-$username-</a><p>$summary</p></div>";
                 $i++;
             }
         ?>
