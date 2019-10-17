@@ -24,7 +24,7 @@
 
 
 <?php
-    $statement = $db->prepare("SELECT display_name, profile.user_id doc_title, doc_text, FROM profile, document WHERE doc_id=$id AND profile.user_id = document.user_id");
+    $statement = $db->prepare("SELECT display_name, profile.user_id, doc_title, doc_text FROM profile, document WHERE doc_id=$id AND profile.user_id = document.user_id");
     $statement->execute();
 
     $row = $statement->fetch(PDO::FETCH_ASSOC);
