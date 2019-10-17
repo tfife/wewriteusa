@@ -28,12 +28,12 @@
             while (($row = $statement->fetch(PDO::FETCH_ASSOC)) && $i < 10)
             {
                 $title = $row['doc_title'];
-                $summary = $roy['doc_sum'];
+                $summary = $row['doc_sum'];
                 $content = $row['doc_text'];
                 $id = $row['doc_id'];
                 $user = $row['user_id'];
                 $username = $row['display_name'];
-                echo "<div class='card'><a href='document.php?doc=$id'><p><strong>$title </strong></a>-<a href='profile.php?user=$user' style='float: right'>$username</a><p>$summary</p></div>";
+                echo "<div class='card'><a href='document.php?doc=$id'><p><strong>$title </strong></a><a href='profile.php?user=$user' style='float: right'>$username</a><p>$summary</p></div>";
                 $i++;
             }
         ?>
