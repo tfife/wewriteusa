@@ -73,7 +73,6 @@ body {
     background-color: white;
   }
   .card a {
-      display: inline-block;
       color: rgb(90, 0, 50);
       text-decoration: none;
       display: inline;
