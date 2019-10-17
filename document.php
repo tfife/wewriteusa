@@ -26,14 +26,25 @@
 <?php
     $statement = $db->prepare("SELECT doc_title, doc_text, user_id FROM document WHERE doc_id=$id");
     $statement->execute();
-    // Go through each result
+
     $row = $statement->fetch(PDO::FETCH_ASSOC);
 
     $title = $row['doc_title'];
     $content = $row['doc_text'];
     $user = $row['user_id'];
 
-    echo "<div class='card'><h2>$title</h2>-<a href='profile.php?user=$user' style='text-decoration: none'>$user</a><br><p>$content</p></div>";
+    echo "<div class='card'><h2>$title</h2><a href='profile.php?user=$user' style='text-decoration: none'>$user</a><br><p>$content</p></div>";
+
+    $statement = $db->prepare("SELECT comment_text, user_id FROM comment WHERE doc_id=$id");
+    $statement->execute();
+
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+        {
+            $comment = $row['comment_text'];
+            $commenter = $row['user_id'];
+            echo "<div class='card'><a href='profile.php?user=$commenter' style='text-decoration: none'><h3>$commenter</h3></a><p>$comment</p></div>";
+        }
+
 ?>
     </div>
     <footer>
