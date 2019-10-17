@@ -21,7 +21,7 @@
 
     <div class="main_content">
         <?php 
-            $statement = $db->prepare("SELECT doc_id, doc_title, doc_text, user_id FROM document");
+            $statement = $db->prepare("SELECT display_name, document.user_id, doc_id, doc_title, doc_sum FROM profile, document WHERE profile.user_id = document.user_id; ");
             $statement->execute();
             // Go through each result
             $i = 0;
@@ -31,7 +31,8 @@
                 $content = $row['doc_text'];
                 $id = $row['doc_id'];
                 $user = $row['user_id'];
-                echo "<div class='card'><a href='document.php?doc=$id' style='text-decoration: none'><p><strong>$title </strong></a>-<a href='profile.php?user=$user' style='text-decoration:none'>$user</a></div>";
+                $username = $row['display_name'];
+                echo "<div class='card'><a href='document.php?doc=$id' style='text-decoration: none'><p><strong>$title </strong></a>-<a href='profile.php?user=$user' style='text-decoration:none'>$username</a></div>";
                 $i++;
             }
         ?>
