@@ -3,10 +3,6 @@
     font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 body {
-    position: relative;
-    min-height: 100vh;
-}
-.page_wrapper {
     padding-bottom: 20px;
     display: grid;
     grid-template-areas:
