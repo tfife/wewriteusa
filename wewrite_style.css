@@ -59,7 +59,7 @@ body {
     border-radius: 5px;
 }
 .sidebar li:hover {
-    background_color: rgb(90, 0, 50);
+    background-color: rgb(90, 0, 50);
 }
 .sidebar li a:hover {
     color: white;
@@ -120,5 +120,7 @@ footer {
 }
 
 @media screen and (min-width: 600px) {
-
+    .sidebar {
+        display: initial;
+    }
 }
