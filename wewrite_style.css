@@ -3,12 +3,10 @@
     font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 body {
-    padding-bottom: 20px;
     display: grid;
     grid-template-areas:
         'navbar navbar navbar navbar navbar'
         'sidebar main main main sidebar2';
-        background-color: snow;
 }
 .navbar {
     grid-area: navbar;
@@ -36,28 +34,39 @@ body {
   .link2 { grid-area: link2; }
   .link3 { grid-area: link3; }
 
-  .sidebar {
+.sidebar {
+    display: none;
     grid-area: sidebar;
     max-width: 300px;
     list-style-type: none;
-    background-color: lightgray;
     text-align: right;
+    padding-top: 20px;
+}
+.sidebar ul {
+    width: 100%;
+}
+.sidebar ul li {
+    width: 100%;
+    border-bottom: 1px solid rgb(90, 0, 50);
+    height: 25px;
 }
 .sidebar li a {
     display: block;
     font-size: 16px;
-    margin: 5px;
-    padding: 3px 10px 3px 0px;
+    padding: 3px 20px 4px 0px;
     text-decoration: none;
     color: black;
     border-radius: 5px;
 }
+.sidebar li:hover {
+    background_color: rgb(90, 0, 50);
+}
 .sidebar li a:hover {
-    background-color: whitesmoke;
+    color: white;
 }
 .sidebar2 {
     grid-area: sidebar2;
-    background-color: lightgray;
+    margin-top: 20px;
 }
 
 h2 {
@@ -72,7 +81,7 @@ h2 {
     padding: 10px 40px 30px 40px;
     border: 1px solid black;
     border-radius: 5px;
-    background-color: white;
+    background-color: snow;
   }
   .card a {
       color: rgb(90, 0, 50);
