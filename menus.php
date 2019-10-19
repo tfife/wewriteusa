@@ -8,6 +8,7 @@
 
 <ul class="sidebar">
     <li><a href="profile.php">Profile</a></li>
+    <li><a href="dashboard.php">Dashboard</a></li>
     <li><a href="mydocuments.php">My Docs</a></li>
     <li><a href="favorites.php">Favorites</a></li>
     <li><a href="friends.php">Friends</a></li>
