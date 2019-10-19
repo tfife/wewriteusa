@@ -16,7 +16,6 @@
 </head>
 
 <body>
-    
     <div class="page_wrapper">
         <?php include("menus.php")?>
         <div class="main_content">
