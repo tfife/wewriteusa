@@ -2,6 +2,7 @@
     margin: 0;
     font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
+
 body {
     display: grid;
     grid-template-areas:
