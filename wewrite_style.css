@@ -45,7 +45,7 @@ body {
 .sidebar ul {
     width: 100%;
 }
-.sidebar ul li {
+.sidebar li {
     width: 100%;
     border-bottom: 1px solid rgb(90, 0, 50);
     height: 25px;
@@ -65,6 +65,7 @@ body {
     color: white;
 }
 .sidebar2 {
+    display: none;
     grid-area: sidebar2;
     margin-top: 20px;
 }
@@ -120,7 +121,7 @@ footer {
 }
 
 @media screen and (min-width: 600px) {
-    .sidebar {
+    .sidebar, .sidebar2 {
         display: initial;
     }
 }
