@@ -44,7 +44,7 @@
 </head>
 
 <body>
-    <div class="login_grid">
+    <div id="login_grid">
         <header><h1>Create an Account</h1>Write and help others Write. That's Right!</header>
         <div id="banner">
             <img src="images/name_color.png" alt="WeWriteUSA">
