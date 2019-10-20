@@ -30,8 +30,10 @@
 
             $row = $statement->fetch(PDO::FETCH_ASSOC);
 
+            $name = $row['display_name'];
             $title = $row['doc_title'];
             $summary = $row['doc_sum'];
+            echo "<h1>$name</h1><br>";
             echo "<h2>Documents</h2>";
             echo "<div class='card'><a href='document.php?doc=$id'><h2>$title</h2></a><p>$summary</p></div><br>";
 
