@@ -39,14 +39,13 @@
         <div class="main_content">
             
             <?php
-                echo("Your search: \"" . $search . "\"");
+                echo("<h2>Your search: \"" . $search . "\"</h2>");
 
                 if ($good == false || $search == "") {
                     echo("<h2>Invalid Search content</h2>");
                 }
 
                 else {
-                    echo("We got here!");
                     //Users
                     $statement = $db->prepare("SELECT display_name, user_id FROM profile WHERE display_name LIKE '$search'");
                     $statement->execute();
@@ -55,15 +54,15 @@
                     {
                         $name = $row['display_name'];
                         $user = $row['user_id'];
-                        echo"<div class='card'><a href='profile.php?user=$user'><h2>$name</h2></a><br>";
-                        /*$s2 = $db->prepare("SELECT doc_title, doc_id FROM document WHERE user_id = $user");
+                        echo"<div class='card'><a href='profile.php?user=$user'><h3>$name</h3></a><br>";
+                        $s2 = $db->prepare("SELECT doc_title, doc_id FROM document WHERE user_id = $user");
                         $s2->execute();
                         echo "<h3>Documents: </h3>";
                         while($row2 = $s2->fetch(PDO::FETCH_ASSOC)) {
                             $doc = $row2['doc_title'];
                             $doc_id = $row2['doc_id'];
                             echo "<div><a href='document.php?id=$doc_id'>$doc_title</a></div>, ";
-                        }*/
+                        }
                         echo "</div>";
                     }
                     $row = $statement->fetch(PDO::FETCH_ASSOC);
