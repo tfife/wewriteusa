@@ -32,9 +32,10 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-evenly;
-            align-items: center;
+            justify-content: space-between;
+            align-items: baseline;
             min-height: 60px;
+            padding: 0 20px;
         }
         header {
             grid-area: header;
@@ -43,17 +44,24 @@
         }
         #create_account {
             grid-area: form;
-            padding: 10%;
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+            padding: 10vh 30px;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
+            border-left: 2px dotted white;
         }
         #create_account div {
+            margin: 10px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             align-items: baseline;
-            justify-content: right;
+            justify-content: space-between;
+        }
+        #create_account button {
+            margin: 20px;
         }
         #promo {
             grid-area: promo;
