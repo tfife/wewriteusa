@@ -61,7 +61,7 @@
                         while($row2 = $s2->fetch(PDO::FETCH_ASSOC)) {
                             $doc = $row2['doc_title'];
                             $doc_id = $row2['doc_id'];
-                            echo "<div><a href='document.php?id=$doc_id'>$doc</a></div>, ";
+                            echo "<div><a href='document.php?id=$doc_id'>$doc, </a></div> ";
                         }
                         echo "</div>";
                     }
