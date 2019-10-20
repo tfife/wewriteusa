@@ -25,7 +25,7 @@
     <?php include("menus.php")?>
     <div class="main_content">
         <?php
-            $statement = $db->prepare("SELECT display_name, profile.user_id, doc_title, doc_text FROM profile, document WHERE doc_id=$id");
+            $statement = $db->prepare("SELECT display_name, profile.user_id, doc_title, doc_sum FROM profile, document WHERE doc_id=$id");
             $statement->execute();
 
             $row = $statement->fetch(PDO::FETCH_ASSOC);
@@ -37,16 +37,15 @@
 
             echo "<h2>Comments</h2>";
 
-            $statement = $db->prepare("SELECT display_name, document.user_id,  doc_title, doc_sum, comment_text FROM profile, document, comment WHERE comment.user_id = $id AND comment.doc_id = document.doc_id AND document.user_id = profile.user_id;");
+            $statement = $db->prepare("SELECT display_name, document.user_id,  doc_title, comment_text FROM profile, document, comment WHERE comment.user_id = $id AND comment.doc_id = document.doc_id AND document.user_id = profile.user_id;");
             $statement->execute();
             while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                 {
                     $doc_title = $row['doc_title'];
-                    $summary = $row['doc_sum'];
                     $author = $row['user_id'];
                     $user = $row['user_id'];
                     $comment = $row['comment_text'];
-                    echo"<div class='card'><a href='document.php?doc=$id'><h3>$doc_title</h3></a><a href='profile.php?user=$user'>$commenter</a><br>";
+                    echo"<div class='card'><a href='document.php?doc=$id'><h3>$doc_title</h3></a><a href='profile.php?user=$user'>$author</a><br>";
                     echo "<div class='com_card'><p>$comment</p></div>";
                     echo "</div>";
                 }
