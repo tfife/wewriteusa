@@ -39,15 +39,14 @@
         <div class="main_content">
             
             <?php
-            echo($search);
+            echo("Your search: \"" . $search . "\"");
                 if ($good == false || $search == "") {
                     echo("<h2>Invalid Search content</h2>");
                 }
 
                 else {
-                    
                     //Users
-                    $statement = $db->prepare("SELECT display_name, user_id, FROM profile WHERE display_name LIKE $i");
+                    $statement = $db->prepare("SELECT display_name, user_id, FROM profile WHERE display_name LIKE $search");
                     $statement->execute();
                     
                     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
