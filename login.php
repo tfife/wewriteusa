@@ -33,8 +33,14 @@
             flex-direction: row;
             flex-wrap: wrap;
         }
-        header { grid-area: header; }
-        #create_account { grid-area: form; }
+        header {
+            grid-area: header;
+            padding: 20%;
+        }
+        #create_account {
+            grid-area: form;
+            padding: 20%;
+        }
         #promo {
             grid-area: promo;
             font-size: 20px;
@@ -47,7 +53,7 @@
     <div id="login_grid">
         <header><h1>Create an Account</h1>Write and help others Write. That's Right!</header>
         <div id="banner">
-            <img src="images/name_color.png" alt="WeWriteUSA">
+            <img src="images/name_color.png" alt="WeWriteUSA" style="height: 40px; width: auto">
             <div>Already have an account? Log in here!</div>
             <div>Username: <input type=text placeholder="This does nothing"></div>
             <div>Password: <input type=text placeholder="This does nothing"></div>
