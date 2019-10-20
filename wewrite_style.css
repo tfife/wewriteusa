@@ -2,7 +2,7 @@
     margin: 0;
     font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
-body {
+#page_wrap {
     display: grid;
     grid-template-areas:
         'navbar navbar navbar navbar navbar'
@@ -75,10 +75,12 @@ h2 {
 }
 .main_content {
     grid-area: main;
+    margin: 15px;
 }
 
 .card {
-    margin: 15px;
+    margin: 15px auto;
+    max-width: 800px;
     padding: 10px 40px 30px 40px;
     border: 1px solid black;
     border-radius: 5px;

@@ -22,41 +22,42 @@
 </head>
 
 <body>
-    <?php include("menus.php")?>
-    <div class="main_content">
-        <?php
-            $statement = $db->prepare("SELECT display_name, profile.user_id, doc_title, doc_sum FROM profile, document WHERE doc_id=$id");
-            $statement->execute();
+    <div id="page_wrap">
+        <?php include("menus.php")?>
+        <div class="main_content">
+            <?php
+                $statement = $db->prepare("SELECT display_name, profile.user_id, doc_title, doc_sum FROM profile, document WHERE doc_id=$id");
+                $statement->execute();
 
-            $row = $statement->fetch(PDO::FETCH_ASSOC);
+                $row = $statement->fetch(PDO::FETCH_ASSOC);
 
-            $name = $row['display_name'];
-            $title = $row['doc_title'];
-            $summary = $row['doc_sum'];
-            echo "<h1>$name</h1><br>";
-            echo "<h2>Documents</h2>";
-            echo "<div class='card'><a href='document.php?doc=$id'><h2>$title</h2></a><p>$summary</p></div><br>";
+                $name = $row['display_name'];
+                $title = $row['doc_title'];
+                $summary = $row['doc_sum'];
+                echo "<h1>$name</h1><br>";
+                echo "<h2>Documents</h2>";
+                echo "<div class='card'><a href='document.php?doc=$id'><h2>$title</h2></a><p>$summary</p></div><br>";
 
-            echo "<h2>Comments</h2>";
+                echo "<h2>Comments</h2>";
 
-            $statement = $db->prepare("SELECT display_name, document.user_id,  doc_title, comment_text FROM profile, document, comment WHERE comment.user_id = $id AND comment.doc_id = document.doc_id AND document.user_id = profile.user_id;");
-            $statement->execute();
-            while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-                {
-                    $doc_title = $row['doc_title'];
-                    $author = $row['display_name'];
-                    $user = $row['user_id'];
-                    $comment = $row['comment_text'];
-                    echo"<div class='card'><a href='document.php?doc=$id'><h3>$doc_title</h3></a><a href='profile.php?user=$user'>$author</a><br>";
-                    echo "<div class='com_card'><p>$comment</p></div>";
-                    echo "</div>";
-                }
+                $statement = $db->prepare("SELECT display_name, document.user_id,  doc_title, comment_text FROM profile, document, comment WHERE comment.user_id = $id AND comment.doc_id = document.doc_id AND document.user_id = profile.user_id;");
+                $statement->execute();
+                while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+                    {
+                        $doc_title = $row['doc_title'];
+                        $author = $row['display_name'];
+                        $user = $row['user_id'];
+                        $comment = $row['comment_text'];
+                        echo"<div class='card'><a href='document.php?doc=$id'><h3>$doc_title</h3></a><a href='profile.php?user=$user'>-$author-</a><br>";
+                        echo "<div class='com_card'><p>$comment</p></div>";
+                        echo "</div>";
+                    }
 
-        ?>
-    </div>
-    <footer>
-        Website created by Tori Fife. 10/2019.
-    </footer>
-
+            ?>
+        </div>
+        <footer>
+            Website created by Tori Fife. 10/2019.
+        </footer>
+    </div><!--page_wrap-->
 </body>
 </html>
