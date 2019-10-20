@@ -46,7 +46,7 @@
 
                 else {
                     //Users
-                    $statement = $db->prepare("SELECT display_name, user_id, FROM profile WHERE display_name LIKE $search");
+                    $statement = $db->prepare("SELECT display_name, user_id, FROM profile WHERE display_name LIKE '$search'");
                     $statement->execute();
                     
                     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
