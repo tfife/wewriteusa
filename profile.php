@@ -2,8 +2,13 @@
     session_start();
     require "dbConnect.php";
     $db = get_db();
-    
-    $id = $_GET['user'];
+
+    if($_GET['user']) {
+        $id = $_GET['user'];
+    }
+    else {
+        $id = 1;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
@@ -20,30 +25,31 @@
     <?php include("menus.php")?>
     <div class="main_content">
         <?php
-            $statement = $db->prepare("SELECT display_name, profile.user_id, doc_title, doc_text FROM profile, document WHERE doc_id=$id AND profile.user_id = document.user_id");
+            $statement = $db->prepare("SELECT display_name, profile.user_id, doc_title, doc_text FROM profile, document WHERE doc_id=$id");
             $statement->execute();
 
             $row = $statement->fetch(PDO::FETCH_ASSOC);
 
             $title = $row['doc_title'];
-            $content = $row['doc_text'];
-            $user = $row['user_id'];
-            $username = $row['display_name'];
+            $summary = $row['doc_sum'];
+            echo "<h2>Documents</h2>";
+            echo "<div class='card'><a href='document.php?doc=$id'><h2>$title</h2></a><p>$summary</p></div><br>";
 
-            echo "<div class='card'><div style='text-align: center'><h2>$title</h2><a href='profile.php?user=$user'><br>-$username-</a></div><br><p>$content</p></div>";
+            echo "<h2>Comments</h2>";
 
-            echo"<div class='card'><h2>Comments</h2><br>";
-            $statement = $db->prepare("SELECT display_name, comment_text, comment.user_id FROM profile, comment WHERE doc_id=$id AND comment.user_id = profile.user_id");
+            $statement = $db->prepare("SELECT display_name, document.user_id,  doc_title, doc_sum, comment_text FROM profile, document, comment WHERE comment.user_id = $id AND comment.doc_id = document.doc_id AND document.user_id = profile.user_id;");
             $statement->execute();
-
             while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                 {
-                    $comment = $row['comment_text'];
+                    $doc_title = $row['doc_title'];
+                    $summary = $row['doc_sum'];
+                    $author = $row['user_id'];
                     $user = $row['user_id'];
-                    $commenter = $row['display_name'];
-                    echo "<div class='com_card'><a href='profile.php?user=$user'>$commenter</a><p>$comment</p></div>";
+                    $comment = $row['comment_text'];
+                    echo"<div class='card'><a href='document.php?doc=$id'><h3>$doc_title</h3></a><a href='profile.php?user=$user'>$commenter</a><br>";
+                    echo "<div class='com_card'><p>$comment</p></div>";
+                    echo "</div>";
                 }
-            echo "</div>";
 
         ?>
     </div>
