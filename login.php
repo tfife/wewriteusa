@@ -36,8 +36,8 @@
         header { grid-area: header; }
         #create_account { grid-area: form; }
         #promo {
+            grid-area: promo;
             font-size: 20px;
-            grid-area: info;
             padding: 20%;
         }
     </style>
@@ -51,16 +51,14 @@
             <div>Already have an account? Log in here!</div>
             <div>Username: <input type=text placeholder="This does nothing"></div>
             <div>Password: <input type=text placeholder="This does nothing"></div>
-        </div>
+        </div><!--banner-->
         <div id="create_account">
             <div>THIS WILL LATER HAVE STUFF FOR CREATING AN ACCOUNT</div>
-        </div>
+        </div><!--create_account-->
         <div id="promo">
             <p>Post text that you would like to reviewed by our community of over 2 users!</p>
             <p>Give helpful feedback to friends.</p>
-        </div>
-
-
+        </div><!--promo-->
     </div><!--login_grid-->
 </body>
 </html>
