@@ -37,12 +37,9 @@
     <div id="page_wrap">
         <?php include("menus.php")?>
         <div class="main_content">
-            <form method="post" action="search-results.php">
-                <input type="text" name="search_string" value="<?php echo $_SESSION[search_string];?>">
-                <button type="submit">Search</button>
-            </form>
             
             <?php
+            echo($search);
                 if ($good == false || $search == "") {
                     echo("<h2>Invalid Search content</h2>");
                 }
