@@ -1,6 +1,12 @@
+
 <ul class="navbar">
     <li class="logo"><img src="images/logo.png" alt="logo" style="height: 45px; width: auto"></li>
-    <li class="search"><input type="text" id="searchbar"><button type="submit">Search</button></li>
+    <li class="search">
+        <form method="post" action="search-results.php">
+            <input type="text" name="search_string" value="<?php echo $_SESSION[search_string];?>">
+            <button type="submit">Search</button>
+        </form>
+    </li>
     <li class="link1"><a href="profile.php">Profile</a></li>
     <li class="link2"><a href="dashboard.php">Dashboard</a></li>
     <li class="link3"><a href="notifications.php">***</a></li>
