@@ -42,7 +42,7 @@
             while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                 {
                     $doc_title = $row['doc_title'];
-                    $author = $row['user_id'];
+                    $author = $row['display_name'];
                     $user = $row['user_id'];
                     $comment = $row['comment_text'];
                     echo"<div class='card'><a href='document.php?doc=$id'><h3>$doc_title</h3></a><a href='profile.php?user=$user'>$author</a><br>";
