@@ -9,7 +9,7 @@ $password = $_POST['password'];
 $statement = $db->prepare("SELECT username, password FROM profile WHERE username = $username AND password = $password");
 $statement->execute();
 if($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-    echo $row['username'] . "<br" . $row['password'];
+    echo $row['username'] . "<br>" . $row['password'];
 }
 
 echo "$username<br>$password";
