@@ -6,11 +6,19 @@ $db = get_db();
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$statement = $db->prepare("SELECT username, password FROM profile WHERE username = '$username' AND password = '$password'");
+$statement = $db->prepare("SELECT user_id, username, password FROM profile WHERE username = '$username' AND password = '$password'");
 $statement->execute();
-if($statement->fetch(PDO::FETCH_ASSOC)) {
-    echo "test";
+//if we have a match, set session variables and redirect to dashboard
+$row = $statement->fetch(PDO::FETCH_ASSOC);
+if($row) {
+    $_SESSION[user_id] = $row[user_id];
+    $_SESSION[username] = $username;
+    $_SESSION[password] = $password;
+}
+//otherwise go back to login and display error
+else {
+
 }
 
-echo "$username<br>$password";
+echo "$username<br>$password<br>" . $_SESSION[user_id];
 ?>
