@@ -10,7 +10,7 @@
     <li class="link1"><a href="profile.php">Profile</a></li>
     <li class="link2"><a href="dashboard.php">Dashboard</a></li>
     <li class="link3"><a href="notifications.php">***</a></li>
-    <li><a href="logout.php">Logout</a></li>
+    <li class="link4"><a href="logout.php">Logout</a></li>
 </ul>
 
 <ul class="sidebar">

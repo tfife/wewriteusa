@@ -44,7 +44,7 @@
         }
         header {
             grid-area: header;
-            padding: 20%;
+            padding: 10% 20%;
             font-size: 32px;
         }
         #create_account {
@@ -71,7 +71,7 @@
         #promo {
             grid-area: promo;
             font-size: 20px;
-            padding: 20%;
+            padding: 10% 20%;
         }
         h1 {
             font-size: 46px;
@@ -86,18 +86,18 @@
             <img src="images/name_color.png" alt="WeWriteUSA" style="height: 40px; width: auto">
             <div>Already have an account? Log in here!</div>
             <form action="process_login.php" method="post">
-                <label>Username:</label><input type=text name="username" <?php /*echo "\"" . $_SESSION[username] . "\"" */?> placeholder="Enter Username">
-                <label>Password:</label><input type=text name="password" <?php /*echo "\"" . $_SESSION[username] . "\"" */?> placeholder="Enter Password">
+                <label>Username: </label><input type=text name="username" <?php /*echo "\"" . $_SESSION[username] . "\"" */?> placeholder="Enter Username">
+                <label>Password: </label><input type=text name="password" <?php /*echo "\"" . $_SESSION[username] . "\"" */?> placeholder="Enter Password">
                 <button type="submit">Login</button>
             </form>
         </div><!--banner-->
-        <div id="create_account">
-            <div><div>Username:</div><div><input type=text id="username" name="username" placeholder="This does nothing"></div></div>
-            <div><div>DisplayName:</div><div><input type=text id="display_name" name="display_name" placeholder="This does nothing"></div></div>
-            <div><div>Password:</div><div><input type=text id="password" name="password" placeholder="This does nothing"></div></div>
-            <div><div>Repeat Password:</div><div><input type=text id="password2" name= "password2" placeholder="This does nothing"></div></div>
-            <div><button>Create Account</button></div>
-        </div><!--create_account-->
+        <form id="create_account">
+            <div><label>Username:</label><div><input type=text id="username" name="username" placeholder="This does nothing"></div></div>
+            <div><label>Display Name:</label><div><input type=text id="display_name" name="display_name" placeholder="This does nothing"></div></div>
+            <div><label>Password:</label><div><input type=text id="password" name="password" placeholder="This does nothing"></div></div>
+            <div><label>Repeat Password:</label><div><input type=text id="password2" name= "password2" placeholder="This does nothing"></div></div>
+            <div><button type="submit">Create Account</button></div>
+        </form><!--create_account-->
         <div id="promo">
             <p>Post text that you would like to reviewed by our community of over 2 users!</p><br>
             <p>Give helpful feedback to friends.</p>

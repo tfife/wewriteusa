@@ -16,7 +16,7 @@
     text-align: center;
     align-items: center;
     display: grid;
-    grid-template-areas: 'logo search break break link1 link2 link3';
+    grid-template-areas: 'logo search break break link1 link2 link3 link4';
   }
   .navbar li a {
   display: block;
@@ -33,6 +33,7 @@
   .link1 { grid-area: link1; }
   .link2 { grid-area: link2; }
   .link3 { grid-area: link3; }
+  .link4 { grid-area: link4; }
 
 .sidebar {
     display: none;
