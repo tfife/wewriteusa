@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if($_SESSION[username] && $_SESSION[password]) {
+        header('Location: dashboard.php');
+    }
     require "dbConnect.php";
     $db = get_db();
 ?>
@@ -80,8 +83,10 @@
         <div id="banner">
             <img src="images/name_color.png" alt="WeWriteUSA" style="height: 40px; width: auto">
             <div>Already have an account? Log in here!</div>
-            <div>Username: <input type=text placeholder="This does nothing"></div>
-            <div>Password: <input type=text placeholder="This does nothing"></div>
+            <form method="post" action = "process_login.php">
+                <label>Username:</label><input type=text name="username" value= <?php echo "\"" . $_SESSION[username] . "\"" ?> placeholder="Enter Username">
+                <label>Password:</label><input type=text name="password" value= <?php echo "\"" . $_SESSION[username] . "\"" ?> placeholder="Enter Password">
+            </form>
             <button>Login</button>
         </div><!--banner-->
         <div id="create_account">
