@@ -6,8 +6,11 @@ $db = get_db();
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$statement = $db->prepare("SELECT username, password FROM profile WHERE username = $username AND password = $password");
+$statement = $db->prepare("SELECT username, password FROM profile WHERE username = '$username' AND password = '$password'");
 $statement->execute();
+if($statement->fetch(PDO::FETCH_ASSOC)) {
+    echo "test";
+}
 
 echo "$username<br>$password";
 ?>
