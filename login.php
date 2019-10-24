@@ -85,9 +85,9 @@
         <div id="banner">
             <img src="images/name_color.png" alt="WeWriteUSA" style="height: 40px; width: auto">
             <div>Already have an account? Log in here!</div>
-            <form method="post" action = "process_login.php">
-                <label>Username:</label><input type=text name="username" value= <?php echo "\"" . $_SESSION[username] . "\"" ?> placeholder="Enter Username">
-                <label>Password:</label><input type=text name="password" value= <?php echo "\"" . $_SESSION[username] . "\"" ?> placeholder="Enter Password">
+            <form action="process_login.php" method="post">
+                <label>Username:</label><input type=text name="username" <?php /*echo "\"" . $_SESSION[username] . "\"" */?> placeholder="Enter Username">
+                <label>Password:</label><input type=text name="password" <?php /*echo "\"" . $_SESSION[username] . "\"" */?> placeholder="Enter Password">
             </form>
             <button>Login</button>
         </div><!--banner-->
