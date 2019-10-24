@@ -65,7 +65,24 @@
                         }
                         echo "</div>";
                     }
-                    $row = $statement->fetch(PDO::FETCH_ASSOC);
+                    //Documents
+                    $statement = $db->prepare("SELECT doc_title, doc_id, user_id FROM profile WHERE doc_title LIKE '$search'");
+                    $statement->execute();
+                    
+                    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+                    {
+                        $title = $row['doc_title'];
+                        $user = $row['user_id'];
+                        echo"<div class='card'><a href='profile.php?user=$user'><h3>$name</h3></a> ";
+                        $s2 = $db->prepare("SELECT display_name FROM profile WHERE user_id = $user");
+                        $s2->execute();
+                        echo "<h3>Documents: </h3>";
+                        while($row2 = $s2->fetch(PDO::FETCH_ASSOC)) {
+                            $name = $row2['display_name'];
+                            echo "<div><a href='profile.php?id=$user'>$$display_name</a></div> ";
+                        }
+                        echo "</div>";
+                    }
 
 
 

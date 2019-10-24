@@ -66,7 +66,7 @@
         #promo {
             grid-area: promo;
             font-size: 20px;
-            padding: 10%;
+            padding: 20%;
         }
         h1 {
             font-size: 46px;
