@@ -88,8 +88,8 @@
             <form action="process_login.php" method="post">
                 <label>Username:</label><input type=text name="username" <?php /*echo "\"" . $_SESSION[username] . "\"" */?> placeholder="Enter Username">
                 <label>Password:</label><input type=text name="password" <?php /*echo "\"" . $_SESSION[username] . "\"" */?> placeholder="Enter Password">
+                <button type="submit">Login</button>
             </form>
-            <button>Login</button>
         </div><!--banner-->
         <div id="create_account">
             <div><div>Username:</div><div><input type=text id="username" name="username" placeholder="This does nothing"></div></div>
