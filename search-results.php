@@ -1,5 +1,10 @@
 <?php
     session_start();
+
+    if(!($_SESSION[user_id])) {
+        header("Location: login.php");
+    }
+
     require "dbConnect.php";
     $db = get_db();
 

@@ -1,5 +1,11 @@
 <?php
     session_start();
+
+    //only allow access if login is accepted
+    if(!($_SESSION[user_id])) {
+        header("Location: login.php");
+    }
+
     require "dbConnect.php";
     $db = get_db();
 
@@ -7,7 +13,7 @@
         $id = $_GET['user'];
     }
     else {
-        $id = 1;
+        $id = $_SESSION[user_id];
     }
 ?>
 <!DOCTYPE html>

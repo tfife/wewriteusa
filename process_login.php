@@ -14,6 +14,7 @@ if($row) {
     $_SESSION[user_id] = $row[user_id];
     $_SESSION[username] = $username;
     $_SESSION[password] = $password;
+    header("Location: dashboard.php");
 }
 //otherwise go back to login and display error
 else {

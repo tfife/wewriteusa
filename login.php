@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if($_SESSION[username] && $_SESSION[password]) {
+    if($_SESSION[user_id]) {
         header('Location: dashboard.php');
     }
 
