@@ -1,8 +1,10 @@
 <?php
     session_start();
-    if($_SESSION[username] && $_SESSION[password]) {
-        header('Location: dashboard.php');
-    }
+
+    //if($_SESSION[username] && $_SESSION[password]) {
+    //    header('Location: dashboard.php');
+    //}
+
     require "dbConnect.php";
     $db = get_db();
 ?>
