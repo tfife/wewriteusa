@@ -30,7 +30,7 @@
             $_SESSION[new_display] = "";
             $good=false;
         } else {
-            $_SESSION[new_display] = test_input($_POST["addr1"]);
+            $_SESSION[new_display] = test_input($_POST["display_name"]);
             $new_display = $_SESSION[new_display];
             if (!preg_match("/^[1-9a-zA-Z ]*$/",$new_display)) {
                 $display_nameErr = "Only letters, numbers, and white space in display name";
@@ -38,22 +38,22 @@
             }
         }
 
-        if (empty($_POST["pass1"])) {
+        if (empty($_POST["password1"])) {
             $pass1Err = "Password Required";
             $good=false;
         } else {
-            $pass1 = test_input($_POST["pass1"]);
+            $pass1 = test_input($_POST["password1"]);
             if (!preg_match("/^[1-9a-zA-Z]*$/",$pass1)) {
                 $pass1Err = "Only letters and numbers in password";
                 $good = false;
             }
         }
 
-        if (empty($_POST["pass2"])) {
+        if (empty($_POST["password2"])) {
             $pass2Err = "Reenter Password";
             $good = false;
         } else {
-            $pass2 = test_input($_POST["pass2"]);
+            $pass2 = test_input($_POST["password2"]);
             if ($pass1 != $pass2) {
                 $pass2Err = "Password was entered incorrectly";
             }
@@ -160,7 +160,7 @@
                 <button type="submit">Login</button>
             </form>
         </div><!--banner-->
-        <form id="create_account" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <form id="create_account" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
             <div>
                 <label>Username:</label>
                 <div><input type=text id="username" name="username" value="<?php echo $_SESSION[new_user];?>" placeholder="Enter Username"></div>
