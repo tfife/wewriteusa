@@ -13,7 +13,7 @@
     $good = true;
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["username"])) {
-            $usernameErr = "Username is required";
+            $usernameErr = "* Username is required";
             $_SESSION[new_user] = "";
             $good = false;
         } else {
@@ -22,7 +22,7 @@
             $new_user = $_SESSION[new_user];
             //check that only letters, numbers, and whitespace are used
             if (!preg_match("/^[1-9a-zA-Z ]*$/",$new_user)) {
-                $usernameErr = "Only letters, numbers, and white space in username";
+                $usernameErr = "* Only letters, numbers, and white space in username";
                 $good = false;
             }
             //check to see if username is already in database
@@ -31,21 +31,21 @@
                 $statement->execute();
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
                 if($row) {
-                    $usernameErr = "Username \"$new_user\" is already taken :(";
+                    $usernameErr = "* Username \"$new_user\" is already taken :(";
                     $good = false;
                 }
             }
         }
 
         if (empty($_POST["display_name"])) {
-            $display_nameErr = "Display Name is required";
+            $display_nameErr = "* Display Name is required";
             $_SESSION[new_display] = "";
             $good=false;
         } else {
             $_SESSION[new_display] = test_input($_POST["display_name"]);
             $new_display = $_SESSION[new_display];
             if (!preg_match("/^[1-9a-zA-Z ]*$/",$new_display)) {
-                $display_nameErr = "Only letters, numbers, and white space in display name";
+                $display_nameErr = "* Only letters, numbers, and white space in display name";
                 $good = false;
             }
             //check to see if display name is already in database
@@ -61,23 +61,23 @@
         }
 
         if (empty($_POST["password1"])) {
-            $pass1Err = "Password Required";
+            $pass1Err = "* Password Required";
             $good=false;
         } else {
             $pass1 = test_input($_POST["password1"]);
             if (!preg_match("/^[1-9a-zA-Z]*$/",$pass1)) {
-                $pass1Err = "Only letters and numbers in password";
+                $pass1Err = "* Only letters and numbers in password";
                 $good = false;
             }
         }
 
         if (empty($_POST["password2"])) {
-            $pass2Err = "Reenter Password";
+            $pass2Err = "* Reenter Password";
             $good = false;
         } else {
             $pass2 = test_input($_POST["password2"]);
             if ($pass1 != $pass2) {
-                $pass2Err = "Password was entered incorrectly";
+                $pass2Err = "* Password was entered incorrectly";
             }
         }
 
@@ -170,6 +170,7 @@
         .error {
             color: lightpink;
             text-shadow: 0 0 20px rgb(50, 0, 30);
+            margin-top: -10px;
         }
     </style>
 </head>
@@ -191,22 +192,22 @@
                 <label>Username:</label>
                 <div><input type=text id="username" name="username" value="<?php echo $_SESSION[new_user];?>" placeholder="Enter Username"></div>
             </div>
-            <div class="error">*<?php echo $usernameErr?></div>
+            <div class="error"><?php echo $usernameErr?></div>
             <div>
                 <label>Display Name:</label>
                 <div><input type=text id="display_name" name="display_name" value="<?php echo $_SESSION[new_display];?>" placeholder="Enter Display Name"></div>
             </div>
-            <div class="error">*<?php echo $display_nameErr?></div>
+            <div class="error"><?php echo $display_nameErr?></div>
             <div>
                 <label>Password:</label>
                 <div><input type=text id="password1" name="password1" placeholder="Enter Password"></div>
             </div>
-            <div class="error">*<?php echo $pass1Err?></div>
+            <div class="error"><?php echo $pass1Err?></div>
             <div>
                 <label>Repeat Password:</label>
                 <div><input type=text id="password2" name= "password2" placeholder="Reenter Password"></div>
             </div>
-            <div class="error">*<?php echo $pass2Err?></div>
+            <div class="error"><?php echo $pass2Err?></div>
             <button type="submit">Create Account</button>
         </form><!--create_account-->
         <div id="promo">
