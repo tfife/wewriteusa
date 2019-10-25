@@ -7,6 +7,8 @@
 
     require "dbConnect.php";
     $db = get_db();
+
+    include("create_user.php");
 ?>
 
 <!DOCTYPE html>
@@ -91,11 +93,23 @@
                 <button type="submit">Login</button>
             </form>
         </div><!--banner-->
-        <form id="create_account">
-            <div><label>Username:</label><div><input type=text id="username" name="username" placeholder="This does nothing"></div></div>
-            <div><label>Display Name:</label><div><input type=text id="display_name" name="display_name" placeholder="This does nothing"></div></div>
-            <div><label>Password:</label><div><input type=text id="password" name="password" placeholder="This does nothing"></div></div>
-            <div><label>Repeat Password:</label><div><input type=text id="password2" name= "password2" placeholder="This does nothing"></div></div>
+        <form id="create_account" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <div>
+                <label>Username:</label>
+                <div><input type=text id="username" name="username" value="<?php echo $_SESSION[new_user];?>" placeholder="Enter Username"></div>
+            </div>
+            <div>
+                <label>Display Name:</label>
+                <div><input type=text id="display_name" name="display_name" value="<?php echo $_SESSION[new_display];?>" placeholder="Enter Display Name"></div>
+            </div>
+            <div>
+                <label>Password:</label>
+                <div><input type=text id="password" name="password" value="<?php echo $_SESSION[pass1];?>" placeholder="Enter Password"></div>
+            </div>
+            <div>
+                <label>Repeat Password:</label>
+                <div><input type=text id="password2" name= "password2" value="<?php echo $_SESSION[pass2];?>" placeholder="Reenter Password"></div>
+            </div>
             <div><button type="submit">Create Account</button></div>
         </form><!--create_account-->
         <div id="promo">
