@@ -60,12 +60,11 @@
         }
 
         if ($good == true) {
-
             $statement = $db->prepare("INSERT INTO profile(username, password, display_name) VALUES ('$new_user', '$pass1', '$new_display')");
             $statement->execute();
-            $_SESSION[user_id] = $db->lastInsertId('profile_id_seq');
-            $_SESSION[username] = $new_user;
-            $_SESSION[password] = $pass1;
+            //$_SESSION[user_id] = $db->lastInsertId('profile_id_seq');
+            //$_SESSION[username] = $new_user;
+            //$_SESSION[password] = $pass1;
             //header("Location: welcome.php");
         }
     }
