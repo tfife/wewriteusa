@@ -63,10 +63,10 @@
 
             $statement = $db->prepare("INSERT INTO profile(username, password, display_name) VALUES ('$new_user', '$pass1', '$new_display')");
             $statement->execute();
-            $_SESSION[id] = $db->lastInsertId('profile_id_seq');
+            $_SESSION[user_id] = $db->lastInsertId('profile_id_seq');
             $_SESSION[username] = $new_user;
             $_SESSION[password] = $pass1;
-            header("Location: dashboard.php");
+            header("Location: welcome.php");
         }
     }
 
