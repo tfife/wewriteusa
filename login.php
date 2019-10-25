@@ -164,8 +164,8 @@
             <div>
                 <label>Username:</label>
                 <div><input type=text id="username" name="username" value="<?php echo $_SESSION[new_user];?>" placeholder="Enter Username"></div>
-                <div><?php echo $usernameErr?></div>
             </div>
+            <div><?php echo $usernameErr?></div>
             <div>
                 <label>Display Name:</label>
                 <div><input type=text id="display_name" name="display_name" value="<?php echo $_SESSION[new_display];?>" placeholder="Enter Display Name"></div>

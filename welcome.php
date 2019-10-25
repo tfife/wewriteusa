@@ -1,14 +1,9 @@
 <?php
     session_start();
 
-    if($_SESSION[user_id]) {
-        header('Location: dashboard.php');
+    if(!($_SESSION[user_id])) {
+        header('Location: login.php');
     }
-
-    require "dbConnect.php";
-    $db = get_db();
-
-    include("create_user.php");
 ?>
 
 <!DOCTYPE html>
