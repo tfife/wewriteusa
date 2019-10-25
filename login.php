@@ -17,14 +17,17 @@
             $_SESSION[new_user] = "";
             $good = false;
         } else {
+            //check that field wasn't empty
             $_SESSION[new_user] = test_input($_POST["username"]);
             $new_user = $_SESSION[new_user];
+            //check that only letters, numbers, and whitespace are used
             if (!preg_match("/^[1-9a-zA-Z ]*$/",$new_user)) {
                 $usernameErr = "Only letters, numbers, and white space in username";
                 $good = false;
             }
+            //check to see if username is already in database
             else {
-                $statement = $db->prepare("SELECT username FROM profile WHERE username = $new_user");
+                $statement = $db->prepare("SELECT username FROM profile WHERE username = '$new_user'");
                 $statement->execute();
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
                 if($row) {
