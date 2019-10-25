@@ -66,7 +66,7 @@
             $_SESSION[user_id] = $db->lastInsertId('profile_id_seq');
             $_SESSION[username] = $new_user;
             $_SESSION[password] = $pass1;
-            header("Location: welcome.php");
+            //header("Location: welcome.php");
         }
     }
 
