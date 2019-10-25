@@ -19,9 +19,11 @@
         body {
             background-color: rgb(120, 0, 75);
             color: white;
+            text-align: center;
         }
         header {
             font-size: 4em;
+            margin-top: 1em;
         }
         h1 {
             font-size: 3em;
@@ -32,9 +34,10 @@
         button {
             font-size: 3em;
             height: 4em;
-            background-color: snow;
-            color: rgb(90, 0, 50);
-            border: 2px solid lightgray;
+            background-color: lightgray;
+            color: rgb(120, 0, 75);
+            border: 2px solid rgb(90, 0, 50);
+            margin-top: 2em;
         }
 
     </style>

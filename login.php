@@ -23,6 +23,15 @@
                 $usernameErr = "Only letters, numbers, and white space in username";
                 $good = false;
             }
+            else {
+                $statement = $db->prepare("SELECT username FROM profile WHERE username = $new_user");
+                $statement->execute();
+                $row = $statement->fetch(PDO::FETCH_ASSOC);
+                if($row) {
+                    $usernameErr = "username $new_user is already taken :(";
+                    $good = false;
+                }
+            }
         }
 
         if (empty($_POST["display_name"])) {
@@ -60,6 +69,7 @@
         }
 
         if ($good == true) {
+
             $statement = $db->prepare("INSERT INTO profile(username, password, display_name) VALUES ('$new_user', '$pass1', '$new_display')");
             $statement->execute();
             $_SESSION[user_id] = $db->lastInsertId('profile_user_id_seq');
