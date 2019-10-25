@@ -169,18 +169,18 @@
             <div>
                 <label>Display Name:</label>
                 <div><input type=text id="display_name" name="display_name" value="<?php echo $_SESSION[new_display];?>" placeholder="Enter Display Name"></div>
-                <div><?php echo $display_nameErr?></div>
             </div>
+            <div><?php echo $display_nameErr?></div>
             <div>
                 <label>Password:</label>
-                <div><input type=text id="password" name="password" placeholder="Enter Password"></div>
-                <div><?php echo $pass1Err?></div>
+                <div><input type=text id="password1" name="password1" placeholder="Enter Password"></div>
             </div>
+            <div><?php echo $pass1Err?></div>
             <div>
                 <label>Repeat Password:</label>
                 <div><input type=text id="password2" name= "password2" placeholder="Reenter Password"></div>
-                <div><?php echo $pass2Err?></div>
             </div>
+            <div><?php echo $pass2Err?></div>
             <button type="submit">Create Account</button>
         </form><!--create_account-->
         <div id="promo">
