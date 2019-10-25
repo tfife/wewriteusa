@@ -8,7 +8,7 @@
     require "dbConnect.php";
     $db = get_db();
 
-    include("create_user.php");
+    //include("create_user.php");
 ?>
 
 <!DOCTYPE html>
@@ -104,13 +104,13 @@
             </div>
             <div>
                 <label>Password:</label>
-                <div><input type=text id="password" name="password" value="<?php echo $_SESSION[pass1];?>" placeholder="Enter Password"></div>
+                <div><input type=text id="password" name="password" placeholder="Enter Password"></div>
             </div>
             <div>
                 <label>Repeat Password:</label>
-                <div><input type=text id="password2" name= "password2" value="<?php echo $_SESSION[pass2];?>" placeholder="Reenter Password"></div>
+                <div><input type=text id="password2" name= "password2" placeholder="Reenter Password"></div>
             </div>
-            <div><button type="submit">Create Account</button></div>
+            <button type="submit">Create Account</button>
         </form><!--create_account-->
         <div id="promo">
             <p>Post text that you would like to reviewed by our community of over 2 users!</p><br>
