@@ -18,8 +18,6 @@ if($row) {
 }
 //otherwise go back to login and display error
 else {
-
+    header("Location: login.php?error=1");
 }
-
-echo "$username<br>$password<br>" . $_SESSION[user_id];
 ?>

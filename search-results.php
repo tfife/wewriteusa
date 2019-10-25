@@ -59,7 +59,7 @@
                     {
                         $name = $row['display_name'];
                         $user = $row['user_id'];
-                        echo"<div class='card'><a href='profile.php?user=$user'><h3>$name</h3></a><br>";
+                        echo"<div class='card'><a href='profile.php?user=$user'><h3>$name</h3> - (User)</a><br>";
                         $s2 = $db->prepare("SELECT doc_title, doc_id FROM document WHERE user_id = $user");
                         $s2->execute();
                         echo "<h3>Documents: </h3>";
@@ -71,14 +71,15 @@
                         echo "</div>";
                     }
                     //Documents
-                    $statement = $db->prepare("SELECT doc_title, doc_id, user_id FROM profile WHERE doc_title LIKE '%$search%'");
+                    $statement = $db->prepare("SELECT doc_title, doc_id, user_id FROM document WHERE doc_title LIKE '%$search%'");
                     $statement->execute();
                     
                     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                     {
                         $title = $row['doc_title'];
                         $user = $row['user_id'];
-                        echo"<div class='card'><a href='profile.php?user=$user'><h3>$name</h3></a> ";
+                        $doc_id = $row['doc_id'];
+                        echo"<div class='card'><a href='document.php?doc=$doc_id'><h3>$title</h3> - (Document)</a> ";
                         $s2 = $db->prepare("SELECT display_name FROM profile WHERE user_id = $user");
                         $s2->execute();
                         echo "<h3>Documents: </h3>";
