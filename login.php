@@ -62,7 +62,7 @@
         if ($good == true) {
             $statement = $db->prepare("INSERT INTO profile(username, password, display_name) VALUES ('$new_user', '$pass1', '$new_display')");
             $statement->execute();
-            $id = $db->lastInsertId('profile_id_seq');
+            $id = $db->lastInsertId('profile_user_id_seq');
             //$_SESSION[user_id] = $id;
             //$_SESSION[username] = $new_user;
             //$_SESSION[password] = $pass1;
