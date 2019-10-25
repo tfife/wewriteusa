@@ -31,7 +31,7 @@
                 $statement->execute();
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
                 if($row) {
-                    $usernameErr = "username $new_user is already taken :(";
+                    $usernameErr = "Username \"$new_user\" is already taken :(";
                     $good = false;
                 }
             }
@@ -47,6 +47,16 @@
             if (!preg_match("/^[1-9a-zA-Z ]*$/",$new_display)) {
                 $display_nameErr = "Only letters, numbers, and white space in display name";
                 $good = false;
+            }
+            //check to see if display name is already in database
+            else {
+                $statement = $db->prepare("SELECT display_name FROM profile WHERE display_name = '$new_display'");
+                $statement->execute();
+                $row = $statement->fetch(PDO::FETCH_ASSOC);
+                if($row) {
+                    $display_nameErr = "Display name \"$new_display\" is already taken :(";
+                    $good = false;
+                }
             }
         }
 
@@ -157,6 +167,10 @@
         h1 {
             font-size: 46px;
         }
+        .error {
+            color: lightpink;
+            text-shadow: 0 0 20px rgb(50, 0, 30);
+        }
     </style>
 </head>
 
@@ -177,22 +191,22 @@
                 <label>Username:</label>
                 <div><input type=text id="username" name="username" value="<?php echo $_SESSION[new_user];?>" placeholder="Enter Username"></div>
             </div>
-            <div><?php echo $usernameErr?></div>
+            <div class="error">*<?php echo $usernameErr?></div>
             <div>
                 <label>Display Name:</label>
                 <div><input type=text id="display_name" name="display_name" value="<?php echo $_SESSION[new_display];?>" placeholder="Enter Display Name"></div>
             </div>
-            <div><?php echo $display_nameErr?></div>
+            <div class="error">*<?php echo $display_nameErr?></div>
             <div>
                 <label>Password:</label>
                 <div><input type=text id="password1" name="password1" placeholder="Enter Password"></div>
             </div>
-            <div><?php echo $pass1Err?></div>
+            <div class="error">*<?php echo $pass1Err?></div>
             <div>
                 <label>Repeat Password:</label>
                 <div><input type=text id="password2" name= "password2" placeholder="Reenter Password"></div>
             </div>
-            <div><?php echo $pass2Err?></div>
+            <div class="error">*<?php echo $pass2Err?></div>
             <button type="submit">Create Account</button>
         </form><!--create_account-->
         <div id="promo">
