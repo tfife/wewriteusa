@@ -9,9 +9,8 @@
     $db = get_db();
     $id = $_GET['doc'];
     $user = $_SESSION[user_id];
-
+    $comment = '';
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $comment = '';
         if (empty($_POST["comment"])) {
             $good = false;
         } else {
