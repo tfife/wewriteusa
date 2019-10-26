@@ -3,10 +3,10 @@ session_start();
 require "dbConnect.php";
 $db = get_db();
 
-$title = test_input($_POST['title']);
-$content = test_input($_POST['content']);
-$summary = test_input($_POST['summary']);
-$user = test_input($_SESSION[user_id]);
+$title = test_input($_POST['title'], ENT_QUOTES);
+$content = test_input($_POST['content'], ENT_QUOTES);
+$summary = test_input($_POST['summary'], ENT_QUOTES);
+$user = $_SESSION[user_id];
 
 function test_input($data) {
     $data = trim($data);
