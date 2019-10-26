@@ -69,7 +69,7 @@
                 $commenter = $row['user_id'];
                 $username = $row['display_name'];
 
-                echo "<div class='card' style='position:relative'><div style='text-align: center'><h2>$title</h2><a href='profile.php?user=$user'><br>-$username-</a></div><br><p>$content</p></div>";
+                echo "<div class='card' style='position:relative'>$heart<div style='text-align: center'><h2>$title</h2><a href='profile.php?user=$user'><br>-$username-</a></div><br><p>$content</p></div>";
 
                 echo"<div class='card'><h2>Comments</h2><br>";
                 $statement = $db->prepare("SELECT display_name, comment_text, comment_id, comment.user_id FROM profile, comment WHERE doc_id=$id AND comment.user_id = profile.user_id");
