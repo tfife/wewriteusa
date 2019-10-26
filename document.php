@@ -11,16 +11,19 @@
     $user = $_SESSION[user_id];
     $comment = '';
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["comment"])) {
+        if (empty($_POST['comment'])) {
             $good = false;
+            echo("no comment");
         } else {
-            $comment = pg_escape_string(test_input($_POST["comment"]));
+            $comment = pg_escape_string(test_input($_POST['comment']));
+            echo("it did actually work");
         }
 
         if ($good == true) {
 
             $statement = $db->prepare("INSERT INTO comment(comment_text, user_id, doc_id) VALUES ('$comment', $user, $id)");
             $statement->execute();
+            echo "we got here";
         }
     }
 
@@ -72,13 +75,14 @@
                         echo "<div class='com_card'><a href='profile.php?user=$user'>$commenter</a><p>$comment</p></div>";
                     }
                 ?>
-                <div class='com_card'>
-                    <form id='post_comment' action='<?php echo htmlspecialchars($_SERVER['PHP_SELF'] . "?doc=$id");?>' method='post'>
-                        <label>Add Comment: </label>
-                    </form>
-                    <textarea form='post_comment' name='comment'></textarea>
-                    <br>
-                    <button type='submit' form='post_comment'>Post</button></div>
+                    <div class='com_card'>
+                        <form id="post_comment" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'] . "?doc=$id");?>" method="post">
+                            <label>Add Comment: </label>
+                        </form>
+                        <textarea form="post_comment" name="comment" required></textarea>
+                        <br>
+                        <button type="submit" form="post_comment">Post</button>
+                    </div>
                 </div>
 
         </div>
