@@ -35,7 +35,7 @@
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                     $fave = $row['doc_id'];
 
-                    $statement2 = $db->prepare("SELECT doc_title, doc_sum, doc_id FROM document WHERE doc_id=$fave");
+                    $statement2 = $db->prepare("SELECT doc_title, doc_sum, doc_id, document.user_id, display_name FROM document, profile WHERE doc_id=$fave AND document.user_id = profile.user_id");
                     $statement2->execute();
 
                     while ($row2 = $statement2->fetch(PDO::FETCH_ASSOC)) {
@@ -43,8 +43,10 @@
                         $title = $row2['doc_title'];
                         $summary = $row2['doc_sum'];
                         $doc_id = $row2['doc_id'];
+                        $author = $row2['display_name'];
+                        $user = $row2['user_id'];
     
-                        echo "<div class='card' style='position:relative'><a href='document.php?doc=$doc_id'><h2>$title</h2></a><p>$summary</p></div>";
+                        echo "<div class='card' style='position:relative'><a href='document.php?doc=$doc_id'><h2>$title</h2></a><a href='profile.php?id=$user> -$author-</a><p>$summary</p></div>";
                     }
                 }
             ?>
