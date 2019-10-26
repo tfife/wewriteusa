@@ -45,7 +45,7 @@
                         $author = $row2['display_name'];
                         $user = $row2['user_id'];
     
-                        echo "<div class='card' style='position: relative'><a href='document.php?doc=$doc_id'><h2>$title</h2></a><a href='profile.php?id=$user'> -$author-</a><p>$summary</p></div>";
+                        echo "<div class='card' style='position: relative'><a href='document.php?doc=$doc_id'><h2>$title</h2></a><a href='profile.php?id=$user'> -$author-</a><a href='toggle-heart.php?doc=$doc_id' style='position:absolute; top:5px; right: 5px'>Remove From Favorites</a><p>$summary</p></div>";
                     }
                 }
             ?>
