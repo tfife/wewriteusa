@@ -56,21 +56,26 @@
 
                 $title = $row['doc_title'];
                 $content = $row['doc_text'];
-                $user = $row['user_id'];
+                $commenter = $row['user_id'];
                 $username = $row['display_name'];
 
                 echo "<div class='card'><div style='text-align: center'><h2>$title</h2><a href='profile.php?user=$user'><br>-$username-</a></div><br><p>$content</p></div>";
 
                 echo"<div class='card'><h2>Comments</h2><br>";
-                $statement = $db->prepare("SELECT display_name, comment_text, comment.user_id FROM profile, comment WHERE doc_id=$id AND comment.user_id = profile.user_id");
+                $statement = $db->prepare("SELECT display_name, comment_text, comment_id, comment.user_id FROM profile, comment WHERE doc_id=$id AND comment.user_id = profile.user_id");
                 $statement->execute();
 
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                     {
                         $comment = $row['comment_text'];
-                        $user = $row['user_id'];
+                        $comment_id = $row['comment_id'];
+                        $user_id = $row['user_id'];
                         $commenter = $row['display_name'];
-                        echo "<div class='com_card'><a href='profile.php?user=$user'>$commenter</a><p>$comment</p></div>";
+                        echo "<div class='com_card' style='position:relative'><a href='profile.php?user=$user_id'>$commenter</a><p>$comment</p>";
+                        if ($user == $user_id) {
+                            echo "<a href= 'delete-comment.php?user=$user_id&?comment=$comment_id&?return=\"" . htmlspecialchars($_SERVER['PHP_SELF'] . "?doc=$id\")><button type='submit' style='width: 30px; height: 30px border: 1px solid gray; position: absolute; right: 0; top: 0'>X</button></a>";
+                        }
+                        echo "</div>";
                     }
                 ?>
                     <div class='com_card'>
