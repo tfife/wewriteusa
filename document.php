@@ -74,7 +74,7 @@
                     }
                 ?>
                 <div class='com_card'>
-                    <form id='post_comment' action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>
+                    <form id='post_comment' action='<?php echo htmlspecialchars($_SERVER['PHP_SELF'] . "?doc=$id");?>' method='post'>
                         <label>Add Comment: </label>
                     </form>
                     <textarea form='post_comment' name='comment'></textarea>
