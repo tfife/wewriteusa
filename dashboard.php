@@ -40,7 +40,7 @@
                     $user = $row['user_id'];
                     $username = $row['display_name'];
 
-                    $fave = $db->prepare("SELECT doc_id FROM faveDoc WHERE doc_id = $id AND user_id = " . $_SESSION[user-id]);
+                    $fave = $db->prepare("SELECT doc_id FROM faveDoc WHERE doc_id = $id AND user_id = " . $_SESSION[user_id]);
                     $fave->execute();
                     $row2 = $fave->fetch(PDO::FETCH_ASSOC);
                     if ($row2['doc_id']) {
