@@ -52,14 +52,14 @@
                 echo "<h1 style='border-bottom: 1px dashed rgb(120, 0, 75); position: relative'>$name";
                 if ($self != $id) {
                     if ($friend != true) {
-                        echo "<span style='font-size: 16; position: absolute; top: 5px; right: 5px'><a href='toggle-friend.php?friend=$id'>Add Friend</a></span>";
+                        echo "<span style='font-size: 16px; position: absolute; top: 5px; right: 5px'><a href='toggle-friend.php?friend=$id'>Add Friend</a></span>";
                     } else {
-                        echo "<img src='images/star.png' alt='friend'><span style='font-size: 16; position: absolute; top: 5px; right: 5px'><a href='toggle-friend.php?friend=$id'>Remove From Friends</a></span>";
+                        echo "<img src='images/star.png' alt='friend' style='height:20px; width:auto'><span style='font-size: 16px; position: absolute; top: 5px; right: 5px'><a href='toggle-friend.php?friend=$id'>Remove From Friends</a></span>";
                     }
                 }
                     ;
                 echo "</h1><br>";
-
+                $posessive = "";
                 if ($id == $_SESSION[user_id]) {
                     $possessive = "My";
                 }
