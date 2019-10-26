@@ -59,13 +59,13 @@
                     $statement2->execute();
                     $row2 = $statement2->fetch(PDO::FETCH_ASSOC);
     
-                    echo "<div class='card' style='position: relative'><a href='profile.php?id=$friend'><h2>$friend_name</h2></a>";
+                    echo "<div class='card' style='position: relative'><h2><a href='profile.php?user=$friend'>$friend_name</a>";
                     if($row2['f_two']){
-                        echo "<img src='images/star.png' alt='friend' style='height:20px; width:auto'><span style='position:absolute; top:5px; right: 5px'>Friends!</span>";
+                        echo "<span><img src='images/star.png' alt='friend' style='height:20px; width:auto'></span><span style='position:absolute; top:5px; right: 5px'>Friends!</span>";
                     } else {
                         echo "<a href='toggle-friend.php?friend=$friend' style='position:absolute; top:5px; right: 5px'>Add Friend</a>";
                     }
-                    echo "</div>";
+                    echo "</h2></div>";
                 }
             ?>
         </div>

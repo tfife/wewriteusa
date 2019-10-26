@@ -15,7 +15,7 @@
         $id = $_GET['user'];
     }
     else {
-        $id = $_SESSION[user_id];
+        $id = $self;
     }
 ?>
 <!DOCTYPE html>
