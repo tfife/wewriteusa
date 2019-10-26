@@ -9,6 +9,8 @@
     require "dbConnect.php";
     $db = get_db();
 
+    $self = $_SESSION[user_id];
+
     if($_GET['user']) {
         $id = $_GET['user'];
     }
@@ -38,8 +40,25 @@
 
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
                 $name = $row['display_name'];
-
-                echo "<h1 style='border-bottom: 1px dashed rgb(120, 0, 75)'>$name</h1><br>";
+                $friend = false;
+                if ($self != $id) {
+                    $statement = $db->prepare("SELECT f_two FROM friends WHERE f_one = $self AND f_two = $id");
+                    $statement->execute();
+                    $row = $statement->fetch(PDO::FETCH_ASSOC);
+                    if ($row['f_two']) {
+                        $friend = true;
+                    }
+                }
+                echo "<h1 style='border-bottom: 1px dashed rgb(120, 0, 75) position: relative;'>$name";
+                if ($self != $id) {
+                    if ($friend == true) {
+                        echo "<span style='font-size: 16; position: absolute; top: 5px; right: 5px'><a href='toggle-friend.php?friend=$id'>Add Friend</a></span>";
+                    } else {
+                        echo "<span style='font-size: 16; position: absolute; top: 5px; right: 5px'><a href='toggle-friend.php?friend=$id'>Remove From Friends</a></span>";
+                    }
+                }
+                    ;
+                echo "</h1><br>";
 
                 if ($id == $_SESSION[user_id]) {
                     $possessive = "My";
