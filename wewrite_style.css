@@ -115,6 +115,7 @@ h2 {
     text-decoration: underline;
 }
 footer {
+    display: none;
     position: absolute;
     bottom: 0;
     width: 100%;

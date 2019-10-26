@@ -32,17 +32,20 @@
         <?php include("menus.php")?>
         <div class="main_content">
             <?php
-                $statement = $db->prepare("SELECT display_name, profile.user_id, doc_title, doc_sum FROM profile, document WHERE doc_id=$id");
+                $statement = $db->prepare("SELECT display_name, doc_title, doc_sum, doc_id FROM profile, document WHERE profile.user_id = $id AND document.user_id=$id");
                 $statement->execute();
 
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
-
-                $name = $row['display_name'];
+                
                 $title = $row['doc_title'];
                 $summary = $row['doc_sum'];
+                $doc_id = $row['doc_id'];
+                $name = $row['display_name'];
+
                 echo "<h1>$name</h1><br>";
+
                 echo "<h2>Documents</h2>";
-                echo "<div class='card'><a href='document.php?doc=$id'><h2>$title</h2></a><p>$summary</p></div><br>";
+                echo "<div class='card'><a href='document.php?doc=$doc_id'><h2>$title</h2></a><p>$summary</p></div><br>";
 
                 echo "<h2>Comments</h2>";
 
