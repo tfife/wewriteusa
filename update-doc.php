@@ -3,9 +3,9 @@ session_start();
 require "dbConnect.php";
 $db = get_db();
 
-$title = test_input($_POST['title'], ENT_QUOTES);
-$content = test_input($_POST['content'], ENT_QUOTES);
-$summary = test_input($_POST['summary'], ENT_QUOTES);
+$title = pg_escape_string(test_input($_POST['title']));
+$content = pg_escape_string(test_input($_POST['content']));
+$summary = pg_escape_string(test_input($_POST['summary']));
 $user = $_SESSION[user_id];
 
 function test_input($data) {
