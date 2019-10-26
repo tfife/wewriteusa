@@ -56,7 +56,7 @@
                     $heart = "<a href='toggle-heart.php' style='position:absolute; top: 5px; left: 5px'><img src='images/full_heart.png' alt='remove favorite' style='height: 20px; width: auto'></a>";
                 }
                 else {
-                    $heart = "<a href='toggle-heart.php' style='position:absolute; top: 5px; left: 5px'><img src='images/open_heart.png' alt='add favorite' style='height: 20px; width: auto'></a>";
+                    $heart = "<a href='toggle-heart.php' style='position:absolute; top: 5px; left: 5px'><img src='images/open_heart.png?doc=$id' alt='add favorite' style='height: 20px; width: auto'></a>";
                 }
 
                 $statement = $db->prepare("SELECT display_name, profile.user_id, doc_title, doc_text FROM profile, document WHERE doc_id=$id AND profile.user_id = document.user_id");
