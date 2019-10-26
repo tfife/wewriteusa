@@ -29,11 +29,11 @@
                 <label>Document Title:</label>
                 <input type="text" name="title" required>
             </form>
-            <label>Summary:</label>
+            <label>Summary:</label><br>
             <textarea name="summary" form="doc_editor" style="width: 90%; height: 20vh" required></textarea>
-            <label>Content:</label>
+            <label>Content:</label><br>
             <textarea name="content" form="doc_editor" style="width: 90%; height: 40vh" required></textarea>
-
+            <button type="submit" form="doc_editor">Submit!</button>
         </div>
         <footer>
             Website created by Tori Fife. 10/2019.
