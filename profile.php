@@ -51,7 +51,7 @@
                     $summary = $row['doc_sum'];
                     $doc_id = $row['doc_id'];
     
-                    echo "<div class='card'><a href='document.php?doc=$doc_id'><h2>$title</h2></a><p>$summary</p></div><br>";
+                    echo "<div class='card'><a href='document.php?doc=$doc_id'><h2>$title</h2></a><p>$summary</p></div>";
     
                 }
 
