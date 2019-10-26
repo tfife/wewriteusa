@@ -7,8 +7,30 @@
 
     require "dbConnect.php";
     $db = get_db();
-
     $id = $_GET['doc'];
+    $user = $_SESSION[user_id];
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $comment = '';
+        if (empty($_POST["comment"])) {
+            $good = false;
+        } else {
+            $comment = pg_escape_string(test_input($_POST["comment"]));
+        }
+
+        if ($good == true) {
+
+            $statement = $db->prepare("INSERT INTO comment(comment_text, user_id, doc_id) VALUES ('$comment', $user, $id)");
+            $statement->execute();
+        }
+    }
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
@@ -50,8 +72,16 @@
                         $commenter = $row['display_name'];
                         echo "<div class='com_card'><a href='profile.php?user=$user'>$commenter</a><p>$comment</p></div>";
                     }
-                echo "</div>";
-            ?>
+                ?>
+                <div class='com_card'>
+                    <form id='post_comment' action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post'>
+                        <label>Add Comment: </label>
+                    </form>
+                    <textarea form='post_comment' name='comment'></textarea>
+                    <br>
+                    <button type='submit' form='post_comment'>Post</button></div>
+                </div>
+
         </div>
         <footer>
             Website created by Tori Fife. 10/2019.

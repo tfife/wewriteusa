@@ -3,6 +3,7 @@ session_start();
 require "dbConnect.php";
 $db = get_db();
 
+//pg_escape_string allows apostrophes to be entered
 $title = pg_escape_string(test_input($_POST['title']));
 $content = pg_escape_string(test_input($_POST['content']));
 $summary = pg_escape_string(test_input($_POST['summary']));
