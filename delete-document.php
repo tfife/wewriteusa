@@ -3,7 +3,7 @@ session_start();
 require "dbConnect.php";
 $db = get_db();
 
-$doc = $_GET['comment'];
+$doc = $_GET['doc'];
 $user = $_GET['user'];
 
 if ($user == $_SESSION['user_id']) {
