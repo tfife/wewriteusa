@@ -51,7 +51,8 @@
                 
                 $statement = $db->prepare("SELECT doc_id FROM faveDoc WHERE doc_id = $id AND user_id = $user");
                 $statement.execute();
-                if ($statement->fetch(PDO::FETCH_ASSOC)) {
+                $row = $statement->fetch(PDO::FETCH_ASSOC);
+                if ($row) {
                     $heart = "<a href='toggle-heart.php' style='position:absolute; top: 5px; left: 5px'><img src='images/full_heart.png' alt='remove favorite' style='height: 20px; width: auto'></a>";
                 }
                 else {
