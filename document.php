@@ -10,20 +10,18 @@
     $id = $_GET['doc'];
     $user = $_SESSION[user_id];
     $comment = '';
+    $good = true;
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST['comment'])) {
             $good = false;
-            echo("no comment");
         } else {
             $comment = pg_escape_string(test_input($_POST['comment']));
-            echo("it did actually work");
         }
 
         if ($good == true) {
 
             $statement = $db->prepare("INSERT INTO comment(comment_text, user_id, doc_id) VALUES ('$comment', $user, $id)");
             $statement->execute();
-            echo "we got here";
         }
     }
 
