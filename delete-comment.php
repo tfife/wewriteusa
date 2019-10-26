@@ -14,6 +14,6 @@ if ($user == $_SESSION['user_id']) {
     echo("successful");
 }
 
-//$location = $_SERVER['HTTP_REFERER'];
-//header("Location: $location");
+$location = $_SERVER['HTTP_REFERER'];
+header("Location: $location");
 ?>
