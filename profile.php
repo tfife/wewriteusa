@@ -32,23 +32,30 @@
         <?php include("menus.php")?>
         <div class="main_content">
             <?php
-                $statement = $db->prepare("SELECT display_name, doc_title, doc_sum, doc_id FROM profile, document WHERE profile.user_id = $id AND document.user_id=$id");
+            
+                $statement = $db->prepare("SELECT display_name FROM profile WHERE user_id = $id");
                 $statement->execute();
 
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
-                
-                $title = $row['doc_title'];
-                $summary = $row['doc_sum'];
-                $doc_id = $row['doc_id'];
                 $name = $row['display_name'];
-
                 echo "<h1>$name</h1><br>";
-
+                
                 echo "<h2>Documents</h2>";
-                echo "<div class='card'><a href='document.php?doc=$doc_id'><h2>$title</h2></a><p>$summary</p></div><br>";
+
+                $statement = $db->prepare("SELECT doc_title, doc_sum, doc_id FROM document WHERE user_id=$id");
+                $statement->execute();
+
+                while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+
+                    $title = $row['doc_title'];
+                    $summary = $row['doc_sum'];
+                    $doc_id = $row['doc_id'];
+    
+                    echo "<div class='card'><a href='document.php?doc=$doc_id'><h2>$title</h2></a><p>$summary</p></div><br>";
+    
+                }
 
                 echo "<h2>Comments</h2>";
-
                 $statement = $db->prepare("SELECT display_name, document.user_id,  doc_title, comment_text FROM profile, document, comment WHERE comment.user_id = $id AND comment.doc_id = document.doc_id AND document.user_id = profile.user_id;");
                 $statement->execute();
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
