@@ -23,7 +23,7 @@
     <div id="page_wrap">
         <?php include("menus.php")?>
         <div class="main_content">
-            <button class="create_doc" href="doc-editor.php">Create a Document</button>
+            <a href="doc-editor.php"><button class="create_doc">Create a Document</button></a>
 
             <h2>Recent Documents</h2>
             <?php 
