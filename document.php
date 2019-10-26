@@ -73,7 +73,8 @@
                         $commenter = $row['display_name'];
                         echo "<div class='com_card' style='position:relative'><a href='profile.php?user=$user_id'>$commenter</a><p>$comment</p>";
                         if ($user == $user_id) {
-                            echo "<a href= 'delete-comment.php?user=$user_id&?comment=$comment_id&?return=\"" . htmlspecialchars($_SERVER['PHP_SELF'] . "?doc=$id\")><button type='submit' style='width: 30px; height: 30px border: 1px solid gray; position: absolute; right: 0; top: 0'>X</button></a>";
+                            $address = "\"" . htmlspecialchars($_SERVER['PHP_SELF'] . "?doc=$id") . "\"";
+                            echo "<a href= 'delete-comment.php?user=$user_id&?comment=$comment_id&?return=$address)><button type='submit' style='width: 30px; height: 30px border: 1px solid gray; position: absolute; right: 0; top: 0'>X</button></a>";
                         }
                         echo "</div>";
                     }
