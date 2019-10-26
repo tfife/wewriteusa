@@ -140,16 +140,15 @@
         }
         #create_account {
             grid-area: form;
-            margin-top: 10vh;
-            margin-bottom: 10vh;
-            padding: 10vh 30px;
+            margin: 10vh 0;
+            padding: 0 30px;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             border-left: 2px dotted white;
         }
         #create_account div {
-            margin: 10px;
+            margin: 5px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -162,7 +161,7 @@
         #promo {
             grid-area: promo;
             font-size: 20px;
-            padding: 10% 20%;
+            padding: 0 20%;
         }
         h1 {
             font-size: 46px;

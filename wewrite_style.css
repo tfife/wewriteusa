@@ -123,6 +123,14 @@ footer {
     font-size: small;
 }
 
+.create_doc {
+    height: 40px;
+    width: 80px;
+    border: 2px solid white;
+    color: rgb(120, 0, 75);
+    border-radius: 10px;
+}
+
 @media screen and (min-width: 600px) {
     .sidebar, .sidebar2 {
         display: initial;

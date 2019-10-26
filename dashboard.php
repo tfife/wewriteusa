@@ -23,8 +23,11 @@
     <div id="page_wrap">
         <?php include("menus.php")?>
         <div class="main_content">
+            <button class="create_doc" href="doc-editor.php">Create a Document</button>
+
+            <h2>Recent Documents</h2>
             <?php 
-                $statement = $db->prepare("SELECT display_name, document.user_id, doc_id, doc_title, doc_sum FROM profile, document WHERE profile.user_id = document.user_id; ");
+                $statement = $db->prepare("SELECT display_name, document.user_id, doc_id, doc_title, doc_sum FROM profile, document WHERE profile.user_id = document.user_id order by profile.user_id desc");
                 $statement->execute();
                 // Go through each result
                 $i = 0;
