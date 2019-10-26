@@ -55,9 +55,8 @@
                     $row2 = $statement2->fetch(PDO::FETCH_ASSOC);
                     $friend_name = $row2['display_name'];
 
-                    $statement2 = $db->prepare("SELECT f_two FROM friends WHERE f_one = $id");
+                    $statement2 = $db->prepare("SELECT f_two FROM friends WHERE f_one = $id AND f_two = $friend");
                     $statement2->execute();
-                    $row2 = null;
                     $row2 = $statement2->fetch(PDO::FETCH_ASSOC);
     
                     echo "<div class='card' style='position: relative'><h2><a href='profile.php?user=$friend'>$friend_name</a>";
