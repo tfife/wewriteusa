@@ -52,7 +52,7 @@
                 $statement = $db->prepare("SELECT doc_id FROM faveDoc WHERE doc_id = $id AND user_id = $user");
                 $statement.execute();
                 if ($statement->fetch(PDO::FETCH_ASSOC)) {
-                    $heart = "<a href='toggle-heart.php'><img src='images/full_heart.png' alt='add favorite' style='height: 20px; width: auto'></a>";
+                    $heart = "<a href='toggle-heart.php' style='position:absolute; top: 5px; left: 5px'><img src='images/full_heart.png' alt='remove favorite' style='height: 20px; width: auto'></a>";
                 }
                 else {
                     $heart = "<a href='toggle-heart.php' style='position:absolute; top: 5px; left: 5px'><img src='images/open_heart.png' alt='add favorite' style='height: 20px; width: auto'></a>";
@@ -68,7 +68,7 @@
                 $commenter = $row['user_id'];
                 $username = $row['display_name'];
 
-                echo "<div class='card' style='position:absolute'>$heart<div style='text-align: center'><h2>$title</h2><a href='profile.php?user=$user'><br>-$username-</a></div><br><p>$content</p></div>";
+                echo "<div class='card' style='position:absolute'><div style='text-align: center'><h2>$title</h2><a href='profile.php?user=$user'><br>-$username-</a></div><br><p>$content</p></div>";
 
                 echo"<div class='card'><h2>Comments</h2><br>";
                 $statement = $db->prepare("SELECT display_name, comment_text, comment_id, comment.user_id FROM profile, comment WHERE doc_id=$id AND comment.user_id = profile.user_id");

@@ -48,7 +48,6 @@
                     }
                 }
             ?>
-            <a href="doc-editor.php"><button class="create_doc">Create a Document</button></a>
         </div>
         <footer>
             Website created by Tori Fife. 10/2019.
