@@ -38,9 +38,17 @@
 
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
                 $name = $row['display_name'];
-                echo "<h1>$name</h1><br>";
+
+                echo "<h1 style='border-bottom: 1px dashed rgb(120, 0, 75)'>$name</h1><br>";
+
+                if ($id == $_SESSION[user_id]) {
+                    $possessive = "My";
+                }
+                else {
+                    $possessive = "$name's";
+                }
                 
-                echo "<h2>Documents</h2>";
+                echo "<h2>$posessive Documents</h2>";
 
                 $statement = $db->prepare("SELECT doc_title, doc_sum, doc_id FROM document WHERE user_id=$id");
                 $statement->execute();
@@ -55,7 +63,7 @@
     
                 }
 
-                echo "<h2>Comments</h2>";
+                echo "<h2>$posessive Comments</h2>";
                 $statement = $db->prepare("SELECT display_name, document.user_id,  doc_title, comment_text FROM profile, document, comment WHERE comment.user_id = $id AND comment.doc_id = document.doc_id AND document.user_id = profile.user_id;");
                 $statement->execute();
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
