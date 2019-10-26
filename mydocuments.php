@@ -39,7 +39,7 @@
                     $summary = $row['doc_sum'];
                     $doc_id = $row['doc_id'];
     
-                    echo "<div class='card' style='position:relative'><a href='document.php?doc=$doc_id'><h2>$title</h2></a><p>$summary</p><a href= 'delete-comment.php?user=$id&doc=$doc_id' style='position: absolute; right: 5px; top: 5px'>Delete Document</a></div>";
+                    echo "<div class='card' style='position:relative'><a href='document.php?doc=$doc_id'><h2>$title</h2></a><p>$summary</p><a href= 'delete-document.php?user=$id&doc=$doc_id' style='position: absolute; right: 5px; top: 5px'>Delete Document</a></div>";
                 }
 
             ?>
