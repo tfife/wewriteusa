@@ -15,7 +15,7 @@ if($row['doc_id']) {
 } else {
     $statement = $db->prepare("INSERT INTO faveDoc VALUES($id, $doc)");
     $statement->execute();
-    $echo("Added FaveDoc");
+    echo("Added FaveDoc");
 }
 
 ?>
