@@ -33,6 +33,7 @@
             <textarea name="summary" form="doc_editor" style="width: 90%; height: 20vh" required></textarea>
             <label>Content:</label><br>
             <textarea name="content" form="doc_editor" style="width: 90%; height: 40vh" required></textarea>
+            <br>
             <button type="submit" form="doc_editor">Submit!</button>
         </div>
         <footer>
