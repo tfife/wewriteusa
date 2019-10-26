@@ -49,12 +49,12 @@
                         $friend = true;
                     }
                 }
-                echo "<h1 style='border-bottom: 1px dashed rgb(120, 0, 75) position: relative;'>$name";
+                echo "<h1 style='border-bottom: 1px dashed rgb(120, 0, 75); position: relative'>$name";
                 if ($self != $id) {
-                    if ($friend == true) {
+                    if ($friend != true) {
                         echo "<span style='font-size: 16; position: absolute; top: 5px; right: 5px'><a href='toggle-friend.php?friend=$id'>Add Friend</a></span>";
                     } else {
-                        echo "<span style='font-size: 16; position: absolute; top: 5px; right: 5px'><a href='toggle-friend.php?friend=$id'>Remove From Friends</a></span>";
+                        echo "<img src='images/star.png' alt='friend'><span style='font-size: 16; position: absolute; top: 5px; right: 5px'><a href='toggle-friend.php?friend=$id'>Remove From Friends</a></span>";
                     }
                 }
                     ;
