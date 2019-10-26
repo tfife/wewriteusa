@@ -39,7 +39,18 @@
                     $id = $row['doc_id'];
                     $user = $row['user_id'];
                     $username = $row['display_name'];
-                    echo "<div class='card'><a href='document.php?doc=$id'><p><h2 style='display: inline'>$title</h2></a><a href='profile.php?user=$user' style='float: right'>-$username-</a><p>$summary</p></div>";
+
+                    $fave = $db->prepare("SELECT doc_id FROM faveDoc WHERE doc_id = $id AND user_id = " . $_SESSION[user-id]);
+                    $fave->execute();
+                    $row2 = $fave->fetch(PDO::FETCH_ASSOC);
+                    if ($row2['doc_id']) {
+                        $heart = "<a href='toggle-heart.php?doc=$id' style='position:absolute; top: 5px; left: 5px'><img src='images/full_heart.png' alt='remove favorite' style='height: 20px; width: auto'></a>";
+                    }
+                    else {
+                        $heart = "<a href='toggle-heart.php?doc=$id' style='position:absolute; top: 5px; left: 5px'><img src='images/open_heart.png' alt='add favorite' style='height: 20px; width: auto'></a>";
+                    }
+
+                    echo "<div class='card' style='position:relative'>$heart<a href='document.php?doc=$id'><p><h2 style='display: inline'>$title</h2></a><a href='profile.php?user=$user' style='float: right'>-$username-</a><p>$summary</p></div>";
                     $i++;
                 }
             ?>
