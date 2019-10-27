@@ -128,9 +128,13 @@ footer {
     height: 40px;
     font-size: 24px;
     width: 300px;
-    border: 2px solid white;
+    border: 2px solid rgb(120, 0, 75);
     color: rgb(120, 0, 75);
+    background-color: lightgray;
     border-radius: 10px;
+}
+.create_doc :hover {
+    background-color: darkgray;
 }
 
 @media screen and (min-width: 600px) {
