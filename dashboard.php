@@ -27,7 +27,7 @@
 
             <h2>Recent Documents</h2>
             <?php 
-                $statement = $db->prepare("SELECT display_name, document.user_id, doc_id, doc_title, doc_sum FROM profile, document WHERE profile.user_id = document.user_id order by profile.user_id desc");
+                $statement = $db->prepare("SELECT display_name, document.user_id, doc_id, doc_title, doc_sum FROM profile, document WHERE profile.user_id = document.user_id order by doc_id desc");
                 $statement->execute();
                 // Go through each result
                 $i = 0;
