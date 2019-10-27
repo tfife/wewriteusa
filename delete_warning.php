@@ -42,7 +42,8 @@
 
 <body>
     <header>Delete Account Confirmation</header>
-    <p>Are you sure you want to delete your account? <span style="color: red">This action CANNOT be undone!</span></p>
+    <p>Are you sure you want to delete your account?</p>
+    <p style="color: red">This action CANNOT be undone!</p>
     <button onclick="window.location.href = 'delete_account.php';">Delete Account</button>
 </body>
 </html>
