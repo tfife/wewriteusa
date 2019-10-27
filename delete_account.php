@@ -8,5 +8,5 @@ $id = $_SESSION[user_id];
 $statement = $db->prepare("DELETE FROM profile WHERE user_id = $id");
 $statement->execute();
 
-header("Location: login.php");
+header("Location: logout.php");
 ?>
