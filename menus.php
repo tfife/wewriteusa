@@ -39,4 +39,12 @@
             document.getElementById("navbar1").style.display = "grid";
         }
     }
+    document.getElementsByTagName("BODY")[0].onresize = function() {
+        fixNavDisplay()
+    };
+    function fixNavDisplay() {
+        if(window.innerWidth >= 800) {
+            document.getElementById("navbar1").style.display = "grid";
+        }
+    }
 </script>

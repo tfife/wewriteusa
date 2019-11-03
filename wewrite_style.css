@@ -19,6 +19,9 @@
     text-align: center;
     align-items: center;
 }
+.togBar div {
+    padding: 1rem;
+}
 .navbar {
     display: none;
     grid-template-areas: 
