@@ -39,13 +39,17 @@
             document.getElementById("navbar1").style.display = "grid";
         }
     }
-    //when navbar display is off and window gets big enough, we need to make sure it comes back on
+    //when navbar display is off and window gets big enough, we need to make sure it comes back one
     document.getElementsByTagName("BODY")[0].onresize = function() {
         fixNavDisplay()
     };
     function fixNavDisplay() {
         if(window.innerWidth >= 800) {
             document.getElementById("navbar1").style.display = "grid";
+            document.getElementById("togImage").src = "images/toggleX.png";
+        } else {
+            document.getElementById("togImage").src = "images/toggle.png";
+            document.getElementById("navbar1").style.display = "none";
         }
     }
 </script>
