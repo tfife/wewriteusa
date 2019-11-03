@@ -32,9 +32,11 @@
         if (isOpen == true) {
             isOpen = false;
             document.getElementById("togImage").src = "images/toggle.png";
+            document.getElementById("navbar1").style.display = "none";
         } else {
             isOpen = true;
             document.getElementById("togImage").src = "images/toggleX.png";
+            document.getElementById("navbar1").style.display = "grid";
         }
     }
 </script>
