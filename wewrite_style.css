@@ -21,11 +21,15 @@
 }
 .navbar {
     display: none;
+    grid-template-areas: 
+        'search'
+        'link1'
+        'link2'
+        'link3'
+        'link4';
     grid-area: navbar;
     background-color: rgb(120, 0, 75);
-    height: 50px;
     list-style-type: none;
-    text-align: center;
     align-items: center;
   }
   .navbar li a {
@@ -38,7 +42,7 @@
   .navbar li a:hover {
      background-color: rgb(90, 0, 50);
   }
-  .logo { grid-area: logo; width: 70px; }
+  .logo { grid-area: logo; width: 70px; display:none;}
   .search { grid-area: search; }
   .link1 { grid-area: link1; }
   .link2 { grid-area: link2; }
@@ -153,14 +157,14 @@ footer {
     }
     .navbar {     
         display: grid;
-        grid-template-areas: 
-            'search'
-            'link1'
-            'link2'
-            'link3'
-            'link4';
+        height: 50px;
+        text-align: center;
+        grid-template-areas: 'logo search break break link1 link2 link3 link4';
     }
     #togBar {
         display: none;
+    }
+    .logo {
+      display: initial;
     }
 }

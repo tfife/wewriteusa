@@ -1,5 +1,5 @@
 <div class="togBar" id="togBar">
-    <div class="logo"><img src="images/name_white.png" alt="name logo" style="height: 45px; width: auto"></div>
+    <div><img src="images/name_white.png" alt="name logo" style="height: 45px; width: auto"></div>
     <div class="toggler" onclick="togFunc()"><img id="togImage" src="images/toggle.png" alt="toggle menu" style="height:45px; width: auto"></div>
 </div>
 <ul class="navbar" id="navbar1">
