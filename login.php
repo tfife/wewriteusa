@@ -83,7 +83,8 @@
 
         if ($good == true) {
 
-            $statement = $db->prepare("INSERT INTO profile(username, password, display_name) VALUES ('$new_user', '$pass1', '$new_display')");
+            $hashed_pass = password_hash($pass1, PASSWORD_DEFAULT);
+            $statement = $db->prepare("INSERT INTO profile(username, password, display_name) VALUES ('$new_user', '$hashed_pass', '$new_display')");
             $statement->execute();
             $_SESSION[user_id] = $db->lastInsertId('profile_user_id_seq');
             $_SESSION[username] = $new_user;

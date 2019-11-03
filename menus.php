@@ -39,6 +39,7 @@
             document.getElementById("navbar1").style.display = "grid";
         }
     }
+    //when navbar display is off and window gets big enough, we need to make sure it comes back on
     document.getElementsByTagName("BODY")[0].onresize = function() {
         fixNavDisplay()
     };
