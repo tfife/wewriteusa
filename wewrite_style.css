@@ -153,7 +153,12 @@ footer {
     }
     .navbar {     
         display: grid;
-        grid-template-areas: 'logo search break break link1 link2 link3 link4';
+        grid-template-areas: 
+            'search'
+            'link1'
+            'link2'
+            'link3'
+            'link4';
     }
     #togBar {
         display: none;
