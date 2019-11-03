@@ -1,5 +1,8 @@
-
-<ul class="navbar">
+<div class="togBar" id="togBar">
+    <div class="logo"><img src="images/name_white.png" alt="name logo" style="height: 45px; width: auto"></div>
+    <div class="toggler" onclick="togFunc()"><img id="togImage" src="images/toggle.png" alt="toggle menu" style="height:45px; width: auto"></div>
+</div>
+<ul class="navbar" id="navbar1">
     <li class="logo"><img src="images/logo.png" alt="logo" style="height: 45px; width: auto"></li>
     <li class="search">
         <form method="post" action="search-results.php">
@@ -22,3 +25,16 @@
 </ul>
 
 <div class="sidebar2">This will be another sidebar!</div>
+
+<script>
+    var isOpen = false;
+    function togFunc() {
+        if (isOpen == true) {
+            isOpen = false;
+            document.getElementById("togImage").src = "images/toggle.png";
+        } else {
+            isOpen = true;
+            document.getElementById("togImage").src = "images/toggleX.png";
+        }
+    }
+</script>

@@ -110,67 +110,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Log in to your weWrite account">
     <style>
-        body {
-            background-color: rgb(90, 0, 50);
-            color: white;
-        }
+
+    body {
+        background-color: rgb(90, 0, 50);
+        color: white;
+    }
+    #login_grid {
+        display: grid;
+        grid-template-areas:
+            'banner banner'
+            'header header'
+            'form form'
+            'promo promo';
+    }
+    #banner {
+        grid-area: banner;
+        background-color: snow;
+        color: rgb(120, 0, 75);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        min-height: 60px;
+        padding: 0 20px;
+    }
+    header {
+        grid-area: header;
+        padding: 10% 20%;
+        font-size: 32px;
+    }
+    #create_account {
+        grid-area: form;
+        margin: auto;
+        padding: 0 30px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        border: 2px dotted white;
+        width: 50%;
+    }
+    #create_account div {
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+    #promo {
+        display: none;
+        grid-area: promo;
+        font-size: 20px;
+        padding: 0 20%;
+    }
+    h1 {
+        font-size: 3vw;
+    }
+    .error {
+        color: lightpink;
+        text-shadow: 0 0 20px rgb(50, 0, 30);
+        margin-top: -10px;
+    }
+    @media screen and (min-width: 900px) {
         #login_grid {
-            display: grid;
             grid-template-areas:
-                'banner banner'
-                'header form'
-                'promo form';
-        }
-        #banner {
-            grid-area: banner;
-            background-color: snow;
-            color: rgb(120, 0, 75);
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: baseline;
-            min-height: 60px;
-            padding: 0 20px;
-        }
-        header {
-            grid-area: header;
-            padding: 10% 20%;
-            font-size: 32px;
-        }
-        #create_account {
-            grid-area: form;
-            margin: 10vh 0;
-            padding: 0 30px;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            border-left: 2px dotted white;
-        }
-        #create_account div {
-            margin: 5px;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: baseline;
-            justify-content: space-between;
-        }
-        #create_account button {
-            margin: 20px;
+            'banner banner'
+            'header form'
+            'promo form';
         }
         #promo {
-            grid-area: promo;
-            font-size: 20px;
-            padding: 0 20%;
+            display: initial;
         }
-        h1 {
-            font-size: 46px;
+        #banner {
+            flex-direction: row;
         }
-        .error {
-            color: lightpink;
-            text-shadow: 0 0 20px rgb(50, 0, 30);
-            margin-top: -10px;
+        #create_account {
+            border: none;
+            border-left: 2px dotted white;
         }
+    }
+    @media screen and (min-width: 620px) {
+        #create_account div {
+            flex-direction: row;
+        }
+    }
     </style>
 </head>
 
@@ -182,7 +206,7 @@
             <div>Already have an account? Log in here!</div>
             <form action="process_login.php" method="post">
                 <label>Username: </label><input type=text name="username" <?php /*echo "\"" . $_SESSION[username] . "\"" */?> placeholder="Enter Username">
-                <label>Password: </label><input type=text name="password" <?php /*echo "\"" . $_SESSION[username] . "\"" */?> placeholder="Enter Password">
+                <label>Password: </label><input type=password name="password" <?php /*echo "\"" . $_SESSION[username] . "\"" */?> placeholder="Enter Password">
                 <button type="submit">Login</button>
             </form>
         </div><!--banner-->

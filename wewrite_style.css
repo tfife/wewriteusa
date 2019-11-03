@@ -5,18 +5,28 @@
 #page_wrap {
     display: grid;
     grid-template-areas:
+        'togbar togbar togbar togbar togbar'
         'navbar navbar navbar navbar navbar'
         'sidebar main main main sidebar2';
 }
+.togBar {
+    grid-area: togbar;
+    background-color: rgb(120, 0, 75);
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
 .navbar {
+    display: none;
     grid-area: navbar;
     background-color: rgb(120, 0, 75);
     height: 50px;
     list-style-type: none;
     text-align: center;
     align-items: center;
-    display: grid;
-    grid-template-areas: 'logo search break break link1 link2 link3 link4';
   }
   .navbar li a {
   display: block;
@@ -137,8 +147,15 @@ footer {
     background-color: darkgray;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
     .sidebar, .sidebar2 {
         display: initial;
+    }
+    .navbar {     
+        display: grid;
+        grid-template-areas: 'logo search break break link1 link2 link3 link4';
+    }
+    #togBar {
+        display: none;
     }
 }
